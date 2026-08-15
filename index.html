@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ORBEEX · Consultoria em Sistemas de Gestão</title>
+<meta name="description" content="Consultoria em sistemas de gestão — ISO 9001, 14001, 45001, 50001, 27001, 26000 e compliance. Implantação e manutenção com acompanhamento próximo.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy: #252538;
+    --navy-dark: #1a1a2e;
+    --navy-mid: #2e2e48;
+    --gold: #E8B84B;
+    --gold-dark: #c99d38;
+    --gold-light: #f0cc76;
+    --gold-bg: #fdf6e3;
+    --bg-light: #f4f4f8;
+    --bg-white: #ffffff;
+    --text-primary: #1a1a2e;
+    --text-secondary: #6b6b8a;
+    --border: #e2e2ee;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-sans); color: var(--text-primary); line-height: 1.6; background: var(--bg-white); }
+  a { text-decoration: none; }
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* ===== HEADER ===== */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--navy); box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  }
+  header .container { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .brand { font-size: 22px; font-weight: 800; color: #fff; letter-spacing: 0.5px; }
+  .brand span { color: var(--gold); }
+  nav { display: flex; gap: 2rem; }
+  nav a { color: rgba(255,255,255,0.75); font-size: 14px; font-weight: 500; transition: color .15s; }
+  nav a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--gold); color: var(--navy) !important; padding: 9px 18px;
+    border-radius: 6px; font-weight: 700 !important;
+  }
+  .nav-cta:hover { background: var(--gold-dark); color: var(--navy) !important; }
+  .nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 24px; cursor: pointer; }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-dark) 100%);
+    color: #fff; padding: 5.5rem 0 6rem; text-align: center; position: relative; overflow: hidden;
+  }
+  .hero::after {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(232,184,75,0.12), transparent 55%);
+    pointer-events: none;
+  }
+  .hero-kicker {
+    display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 1.4px;
+    text-transform: uppercase; color: var(--gold); background: rgba(232,184,75,0.12);
+    padding: 6px 16px; border-radius: 999px; margin-bottom: 1.5rem;
+  }
+  .hero h1 { font-size: clamp(28px, 4.5vw, 46px); font-weight: 800; max-width: 780px; margin: 0 auto 1.2rem; line-height: 1.25; }
+  .hero p { font-size: 17px; color: rgba(255,255,255,0.75); max-width: 620px; margin: 0 auto 2.2rem; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px;
+    border-radius: 8px; font-weight: 700; font-size: 15px; transition: all .2s; border: none; cursor: pointer;
+  }
+  .btn-gold { background: var(--gold); color: var(--navy); }
+  .btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.35); }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+  .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+  /* ===== SECTIONS ===== */
+  section { padding: 5rem 0; }
+  .section-kicker {
+    font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase;
+    color: var(--gold-dark); margin-bottom: 0.6rem;
+  }
+  .section-title { font-size: clamp(24px, 3vw, 32px); font-weight: 800; color: var(--navy); margin-bottom: 1rem; }
+  .section-lede { font-size: 16px; color: var(--text-secondary); max-width: 640px; }
+
+  /* ===== SOBRE ===== */
+  .sobre { background: var(--bg-white); }
+  .sobre-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+  .sobre-card {
+    background: var(--bg-light); border-radius: 16px; padding: 2.2rem;
+    border-left: 4px solid var(--gold);
+  }
+  .sobre-card p { color: var(--text-secondary); font-size: 15px; margin-bottom: 1rem; }
+  .sobre-card p:last-child { margin-bottom: 0; }
+  .sobre-signature { font-weight: 700; color: var(--navy); font-size: 15px; }
+  .sobre-signature small { display: block; font-weight: 400; color: var(--text-secondary); font-size: 13px; margin-top: 2px; }
+
+  .valores { display: flex; flex-direction: column; gap: 1.4rem; }
+  .valor-item { display: flex; gap: 14px; align-items: flex-start; }
+  .valor-icon {
+    width: 40px; height: 40px; flex-shrink: 0; border-radius: 10px;
+    background: var(--gold-bg); display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .valor-item h3 { font-size: 15px; color: var(--navy); margin-bottom: 3px; }
+  .valor-item p { font-size: 13.5px; color: var(--text-secondary); }
+
+  /* ===== SERVIÇOS ===== */
+  .servicos { background: var(--bg-light); }
+  .servicos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.2rem; margin-top: 2.5rem; }
+  .servico-card {
+    background: var(--bg-white); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.5rem; transition: all .2s;
+  }
+  .servico-card:hover { border-color: var(--gold); box-shadow: 0 8px 24px rgba(37,37,56,0.08); transform: translateY(-2px); }
+  .servico-tag {
+    display: inline-block; font-size: 11px; font-weight: 800; color: var(--navy);
+    background: var(--gold-bg); padding: 4px 10px; border-radius: 6px; margin-bottom: 0.9rem;
+  }
+  .servico-card h3 { font-size: 15px; color: var(--navy); margin-bottom: 6px; }
+  .servico-card p { font-size: 13.5px; color: var(--text-secondary); }
+
+  /* ===== CONTATO ===== */
+  .contato {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-dark) 100%);
+    color: #fff; text-align: center;
+  }
+  .contato .section-title { color: #fff; }
+  .contato .section-lede { color: rgba(255,255,255,0.7); margin: 0 auto 2.2rem; }
+  .contato-info {
+    display: flex; gap: 2.5rem; justify-content: center; margin-top: 2.5rem; flex-wrap: wrap;
+  }
+  .contato-item { text-align: left; }
+  .contato-item .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: 0.6px; color: var(--gold); font-weight: 700; margin-bottom: 4px; }
+  .contato-item .val { font-size: 15px; color: #fff; font-weight: 500; }
+
+  /* ===== FOOTER ===== */
+  footer { background: var(--navy-dark); color: rgba(255,255,255,0.5); padding: 2rem 0; font-size: 12.5px; }
+  footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+  footer .brand { font-size: 15px; }
+
+  @media (max-width: 800px) {
+    .sobre-grid { grid-template-columns: 1fr; }
+    nav { position: fixed; top: 68px; left: 0; right: 0; background: var(--navy); flex-direction: column;
+      padding: 1rem 1.5rem; gap: 0; display: none; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+    nav.open { display: flex; }
+    nav a { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .nav-toggle { display: block; }
+    footer .container { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a href="#" class="brand">ORB<span>EEX</span></a>
+    <nav id="nav-menu">
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#contato" class="nav-cta">Contato</a>
+    </nav>
+    <button class="nav-toggle" onclick="document.getElementById('nav-menu').classList.toggle('open')" aria-label="Abrir menu">☰</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="hero-kicker">Assessoria em Sistemas de Gestão</span>
+    <h1>Sistemas de gestão que funcionam no dia a dia, não só no papel.</h1>
+    <p>Consultoria em ISO 9001, 14001, 45001 e mais — da implantação à manutenção, com acompanhamento próximo em cada etapa.</p>
+    <div class="hero-actions">
+      <a href="mailto:luana.civardi@orbeex.com.br?subject=Quero%20falar%20sobre%20consultoria%20ORBEEX" class="btn btn-gold">Fale com a gente</a>
+      <a href="#servicos" class="btn btn-outline">Ver serviços</a>
+    </div>
+  </div>
+</section>
+
+<section class="sobre" id="sobre">
+  <div class="container">
+    <div class="sobre-grid">
+      <div class="sobre-card">
+        <p>A ORBEEX é uma assessoria especializada em sistemas de gestão, focada em ajudar empresas a implantar e manter certificações internacionais de forma prática — sem burocracia desnecessária e com resultado real no dia a dia da operação.</p>
+        <p>Sediada em Bento Gonçalves (RS), atende empresas que querem crescer com processos sólidos, conformidade legal e melhoria contínua de verdade.</p>
+        <div class="sobre-signature">Luana Civardi
+          <small>Fundadora · ORBEEX Assessoria em Sistemas de Gestão</small>
+        </div>
+      </div>
+      <div class="valores">
+        <div class="valor-item">
+          <div class="valor-icon">🤝</div>
+          <div><h3>Acompanhamento próximo</h3><p>Consultoria direta, sem intermediários — do diagnóstico à auditoria.</p></div>
+        </div>
+        <div class="valor-item">
+          <div class="valor-icon">📋</div>
+          <div><h3>Processos que ficam de pé</h3><p>Documentação pensada pra ser usada, não só pra passar em auditoria.</p></div>
+        </div>
+        <div class="valor-item">
+          <div class="valor-icon">🎯</div>
+          <div><h3>Feito sob medida</h3><p>Cada empresa tem uma proposta ajustada à sua realidade e ao seu ritmo.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="servicos" id="servicos">
+  <div class="container">
+    <div class="section-kicker">Normas e serviços</div>
+    <h2 class="section-title">Onde a ORBEEX pode ajudar</h2>
+    <p class="section-lede">Implantação, manutenção e auditoria interna nas principais normas de gestão — sempre com foco em aplicação prática.</p>
+    <div class="servicos-grid">
+      <div class="servico-card"><span class="servico-tag">ISO 9001</span><h3>Gestão da Qualidade</h3><p>Padronização de processos e melhoria contínua da qualidade.</p></div>
+      <div class="servico-card"><span class="servico-tag">ISO 14001</span><h3>Gestão Ambiental</h3><p>Gestão de impactos ambientais e uso responsável de recursos.</p></div>
+      <div class="servico-card"><span class="servico-tag">ISO 45001</span><h3>Saúde e Segurança</h3><p>Prevenção de acidentes e saúde ocupacional no trabalho.</p></div>
+      <div class="servico-card"><span class="servico-tag">ISO 50001</span><h3>Gestão de Energia</h3><p>Uso eficiente de energia e redução de custos operacionais.</p></div>
+      <div class="servico-card"><span class="servico-tag">ISO 27001</span><h3>Segurança da Informação</h3><p>Proteção de dados e continuidade do negócio.</p></div>
+      <div class="servico-card"><span class="servico-tag">ISO 26000</span><h3>Responsabilidade Social</h3><p>Diretrizes de responsabilidade social nos negócios.</p></div>
+      <div class="servico-card"><span class="servico-tag">Compliance</span><h3>Conformidade Legal</h3><p>Adequação a leis, normas e boas práticas do setor.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contato" id="contato">
+  <div class="container">
+    <div class="section-kicker">Contato</div>
+    <h2 class="section-title">Vamos conversar sobre o seu sistema de gestão?</h2>
+    <p class="section-lede">Conte um pouco sobre sua empresa e o que você precisa — respondo por e-mail o mais rápido possível.</p>
+    <a href="mailto:luana.civardi@orbeex.com.br" class="btn btn-gold">luana.civardi@orbeex.com.br</a>
+    <div class="contato-info">
+      <div class="contato-item"><div class="lbl">Localização</div><div class="val">Bento Gonçalves, RS</div></div>
+      <div class="contato-item"><div class="lbl">Atendimento</div><div class="val">Presencial e remoto</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="brand">ORB<span style="color:var(--gold)">EEX</span></div>
+    <div>ORBEEX Assessoria em Sistemas de Gestão LTDA · CNPJ 49.759.143/0001-70 · Bento Gonçalves/RS</div>
+  </div>
+</footer>
+
+</body>
+</html>

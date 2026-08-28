@@ -74,22 +74,22 @@
     {
       "@type": "Question",
       "name": "Preciso ser certificado ISO 9001 para contratar a ORBEEX?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Não. Boa parte do trabalho é com empresas que querem organizar processos sem buscar certificação. A ISO 9001 entra como referência de boas práticas, e o escopo é ajustado ao que a empresa realmente precisa." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Não. Muitos projetos são com empresas que querem organizar processos sem buscar certificação. A ISO 9001 entra como referência, e o escopo é ajustado ao que a empresa precisa." }
     },
     {
       "@type": "Question",
       "name": "A ORBEEX faz a auditoria de certificação?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Não. A auditoria de certificação é feita por um organismo certificador acreditado. A ORBEEX conduz as auditorias internas, prepara a empresa para a auditoria externa e acompanha o tratamento das não conformidades." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Não — quem implanta não pode certificar. A auditoria de certificação é feita por um organismo acreditado; a ORBEEX conduz as auditorias internas e prepara a empresa para a externa." }
     },
     {
       "@type": "Question",
       "name": "Como funciona a assessoria de manutenção do sistema de gestão?",
-      "acceptedAnswer": { "@type": "Answer", "text": "É um acompanhamento contínuo com carga horária mensal combinada: atualização de documentos, condução das auditorias internas, análise crítica, indicadores, planos de ação e preparação para a auditoria externa — sem o custo fixo de um profissional integral." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Acompanhamento contínuo com carga horária mensal combinada: documentos, auditorias internas, indicadores e planos de ação — como ter um especialista da qualidade sem o custo fixo integral." }
     },
     {
       "@type": "Question",
       "name": "O atendimento é presencial ou remoto?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Os dois. A base é Bento Gonçalves/RS, com atendimento presencial na Serra Gaúcha e remoto para todo o Brasil. Na prática, a maioria dos projetos combina os dois formatos." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Os dois. Atendimento presencial na Serra Gaúcha e remoto para todo o Brasil — a maioria dos projetos combina os dois formatos." }
     },
     {
       "@type": "Question",
@@ -389,6 +389,9 @@
   footer a:hover { color: var(--gold); }
   .footer-links { display: flex; gap: 1.3rem; flex-wrap: wrap; }
 
+  /* ===== CTA DE SEÇÃO ===== */
+  .section-cta { text-align: center; margin-top: 2.6rem; }
+
   /* ===== REVELAÇÃO SUAVE ===== */
   .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
   .reveal.visible { opacity: 1; transform: none; }
@@ -455,9 +458,8 @@
     <span class="hero-kicker">Assessoria em Sistemas de Gestão · ISO 9001</span>
     <h1>Seu sistema de gestão precisa funcionar no dia a dia — <em>não só na semana da auditoria</em>.</h1>
     <p class="hero-sub">
-      A ORBEEX organiza, padroniza e mantém o sistema de gestão de pequenas e médias empresas:
-      SGQ baseado na ISO 9001, mapeamento de processos, auditorias internas, 5S e planejamento estratégico.
-      Consultoria sênior, sem o custo fixo de um profissional integral.
+      Assessoria sênior em SGQ ISO 9001, mapeamento de processos, auditorias internas, 5S e
+      planejamento estratégico — para PMEs, sem o custo fixo de um profissional integral.
     </p>
     <div class="hero-actions">
       <a href="#contato" class="btn btn-gold">
@@ -482,7 +484,7 @@
     <div class="section-head center">
       <div class="section-kicker">O ponto de partida</div>
       <h2 class="section-title">Reconhece alguma dessas situações?</h2>
-      <p class="section-lede">A maioria dos projetos da ORBEEX começa exatamente aqui — com um problema concreto, não com um manual de norma.</p>
+      <p class="section-lede">A maioria dos projetos começa aqui: um problema concreto, não um manual de norma.</p>
     </div>
     <div class="problemas-grid">
       <div class="problema">
@@ -512,8 +514,14 @@
     </div>
     <p class="problemas-cta">
       Se você marcou pelo menos uma, dá para resolver.
-      <span>O trabalho da ORBEEX começa entendendo o problema real — a norma é ferramenta, não o objetivo.</span>
+      <span>O trabalho começa entendendo o problema real — a norma é ferramenta, não o objetivo.</span>
     </p>
+    <div class="section-cta">
+      <a href="#contato" class="btn btn-navy">
+        Quero resolver isso
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -523,7 +531,7 @@
     <div class="section-head">
       <div class="section-kicker">Serviços</div>
       <h2 class="section-title">Assessoria do diagnóstico à rotina que se sustenta sozinha</h2>
-      <p class="section-lede">Seis frentes de trabalho que podem ser contratadas de forma isolada ou combinadas em um acompanhamento contínuo, com carga horária ajustada ao porte da sua empresa.</p>
+      <p class="section-lede">Seis frentes de trabalho, isoladas ou combinadas num acompanhamento contínuo, com carga horária ajustada ao porte da empresa.</p>
     </div>
 
     <div class="servicos-grid">
@@ -534,7 +542,7 @@
         </div>
         <h3>Manutenção do SGQ baseado na ISO 9001</h3>
         <div class="servico-dor">Para quem já tem o sistema e precisa mantê-lo vivo o ano inteiro</div>
-        <p>Acompanhamento contínuo do sistema de gestão da qualidade, com rotina definida mês a mês — para que a certificação seja consequência da operação, e não uma maratona antes da auditoria externa.</p>
+        <p>Rotina mensal de manutenção do SGQ, para que a certificação seja consequência da operação — não uma maratona antes da auditoria.</p>
         <ul class="servico-entregas">
           <li>Atualização e controle de documentos e registros</li>
           <li>Análise crítica pela direção e tratamento de não conformidades</li>
@@ -549,7 +557,7 @@
         </div>
         <h3>Mapeamento e melhoria de processos</h3>
         <div class="servico-dor">Para quem sente o retrabalho, o gargalo e o "cada um faz de um jeito"</div>
-        <p>Mapeamento do processo como ele realmente acontece, identificação dos gargalos e redesenho do fluxo — com foco em reduzir retrabalho, esperas e dependência de pessoas específicas.</p>
+        <p>Mapeamento do processo como ele realmente acontece e redesenho do fluxo, para reduzir retrabalho e dependência de pessoas específicas.</p>
         <ul class="servico-entregas">
           <li>Levantamento do fluxo atual junto de quem executa</li>
           <li>Macrofluxo, SIPOC e fluxogramas por processo</li>
@@ -564,7 +572,7 @@
         </div>
         <h3>Estruturação do sistema de gestão</h3>
         <div class="servico-dor">Para quem está começando do zero ou vai buscar a certificação</div>
-        <p>Construção da estrutura do sistema de gestão desde o início: contexto da organização, partes interessadas, riscos, documentação essencial e as rotinas que sustentam tudo isso depois.</p>
+        <p>Estrutura do sistema de gestão desde o início: contexto, partes interessadas, riscos e a documentação essencial para sustentar tudo depois.</p>
         <ul class="servico-entregas">
           <li>Diagnóstico de aderência e plano de implantação por etapas</li>
           <li>Política, objetivos, contexto (SWOT) e partes interessadas</li>
@@ -579,7 +587,7 @@
         </div>
         <h3>Acompanhamento e auditorias internas</h3>
         <div class="servico-dor">Para quem precisa saber onde estão os riscos antes do auditor externo</div>
-        <p>Planejamento e execução das auditorias internas com olhar independente — priorizando os processos de maior risco e transformando cada achado em ação com responsável e prazo.</p>
+        <p>Auditorias internas com olhar independente, priorizando os processos de maior risco e virando achados em ação com responsável e prazo.</p>
         <ul class="servico-entregas">
           <li>Programa anual de auditoria priorizado por risco</li>
           <li>Execução das auditorias e relatório com evidências</li>
@@ -594,7 +602,7 @@
         </div>
         <h3>Implantação do 5S</h3>
         <div class="servico-dor">Para quem quer organização visível no chão de fábrica e no escritório</div>
-        <p>Programa 5S implantado com a equipe, não imposto a ela: sensibilização, organização das áreas, padrão visual e auditorias periódicas para que o ganho não se perca em três meses.</p>
+        <p>5S implantado com a equipe, não imposto a ela — organização, padrão visual e auditorias periódicas para o ganho não se perder em três meses.</p>
         <ul class="servico-entregas">
           <li>Treinamento de sensibilização e formação do comitê 5S</li>
           <li>Dia D, descarte e organização das áreas</li>
@@ -609,7 +617,7 @@
         </div>
         <h3>Planejamento estratégico: definição e monitoramento</h3>
         <div class="servico-dor">Para quem já planejou uma vez — e viu o plano morrer na gaveta</div>
-        <p>Apoio à direção na construção do plano estratégico e, principalmente, na rotina de acompanhamento: metas com dono, indicadores que são medidos de verdade e reuniões de análise que geram decisão.</p>
+        <p>Apoio à direção no plano estratégico e, principalmente, na rotina de acompanhamento: metas com dono e indicadores medidos de verdade.</p>
         <ul class="servico-entregas">
           <li>Análise de cenário (SWOT) e definição de objetivos</li>
           <li>Mapa estratégico por perspectivas (BSC)</li>
@@ -618,6 +626,12 @@
         </ul>
       </article>
 
+    </div>
+    <div class="section-cta">
+      <a href="#contato" class="btn btn-navy">
+        Não sei qual preciso — quero um diagnóstico
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
     </div>
   </div>
 </section>
@@ -628,7 +642,7 @@
     <div class="section-head">
       <div class="section-kicker">Como funciona</div>
       <h2 class="section-title">Quatro etapas, do primeiro contato à autonomia da sua equipe</h2>
-      <p class="section-lede">O objetivo final nunca é criar dependência de consultoria: é deixar a empresa capaz de tocar o próprio sistema de gestão.</p>
+      <p class="section-lede">O objetivo nunca é criar dependência de consultoria — é deixar a empresa capaz de tocar o próprio sistema.</p>
     </div>
     <div class="metodo-grid">
       <div class="etapa">
@@ -648,6 +662,12 @@
         <p>Rotina mensal de manutenção, auditorias internas e análise de indicadores — até a equipe seguir sozinha.</p>
       </div>
     </div>
+    <div class="section-cta">
+      <a href="#contato" class="btn btn-navy">
+        Agendar conversa inicial
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -661,10 +681,9 @@
       </span>
       <h2 class="section-title">Strategya: o sistema de gestão que sai da planilha</h2>
       <p class="section-lede">
-        Planilha solta, pasta compartilhada e documento em três versões diferentes são o motivo mais comum de um
-        sistema de gestão desandar. O <strong style="color:#fff">Strategya</strong> é o software que a ORBEEX
-        desenvolveu para resolver exatamente isso — construído a partir da rotina real de assessoria em PMEs,
-        não de um manual teórico.
+        Planilha solta e documento em três versões são o motivo mais comum de um sistema de gestão desandar.
+        O <strong style="color:#fff">Strategya</strong> é o software que a ORBEEX criou para resolver isso,
+        a partir da rotina real de assessoria em PMEs.
       </p>
     </div>
 
@@ -739,11 +758,16 @@
     </div>
     <div class="sobre-grid">
       <div class="sobre-card">
-        <p>A ORBEEX nasceu de uma ideia simples: assim como uma colmeia organiza milhares de tarefas com processos claros e sem desperdício, uma empresa também pode funcionar com essa mesma eficiência.</p>
-        <p>O trabalho é descomplicar e fortalecer o sistema de gestão de pequenas e médias empresas — com inteligência técnica sênior e escopo flexível, sem o peso de um custo fixo integral.</p>
-        <p>Quem contrata a ORBEEX é atendido diretamente por quem executa: do diagnóstico à implantação, do treinamento da equipe à auditoria interna. Sem repasse para júnior, sem projeto de prateleira.</p>
+        <p>A ORBEEX nasceu de uma ideia simples: assim como uma colmeia organiza milhares de tarefas sem desperdício, uma empresa também pode funcionar com essa eficiência. O trabalho é descomplicar e fortalecer o sistema de gestão de PMEs, com inteligência técnica sênior e escopo flexível.</p>
+        <p>Quem contrata a ORBEEX é atendido diretamente por quem executa — do diagnóstico à auditoria interna. Sem repasse para júnior, sem projeto de prateleira.</p>
         <div class="sobre-signature">Luana Civardi
           <small>Fundadora · ORBEEX Assessoria em Sistemas de Gestão</small>
+        </div>
+        <div class="section-cta" style="text-align:left;margin-top:1.8rem">
+          <a href="#contato" class="btn btn-navy">
+            Falar com a Luana
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
         </div>
       </div>
       <div class="valores">
@@ -790,14 +814,14 @@
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6z"/><circle cx="12" cy="12" r="2.6"/></svg>
           Visão
         </div>
-        <p>Ser a consultoria de referência regional em governança de processos e sistemas de gestão para PMEs, reconhecida pela excelência técnica, eficiência na entrega e por impulsionar o crescimento sustentável de nossos clientes.</p>
+        <p>Ser a consultoria de referência regional em governança de processos e sistemas de gestão para PMEs, reconhecida pela excelência técnica e por impulsionar o crescimento sustentável dos clientes.</p>
       </div>
       <div class="mvv-card">
         <div class="lbl">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4M5 4.5h11l-1.8 3.5L16 11.5H5"/></svg>
           Missão
         </div>
-        <p>Descomplicar e fortalecer os sistemas de gestão de pequenas e médias empresas, entregando inteligência técnica sênior e soluções flexíveis de mapeamento de processos, normas ISO e capacitação, sem o peso de um custo fixo integral.</p>
+        <p>Descomplicar e fortalecer os sistemas de gestão de PMEs, com inteligência técnica sênior e soluções flexíveis de processos, normas ISO e capacitação — sem custo fixo integral.</p>
       </div>
       <div class="mvv-card mvv-wide">
         <div class="lbl">
@@ -813,6 +837,12 @@
         </ul>
       </div>
     </div>
+    <div class="section-cta">
+      <a href="#contato" class="btn btn-navy">
+        Conversar sobre o seu sistema de gestão
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -826,28 +856,34 @@
     <div class="faq-list">
       <details class="faq-item">
         <summary>Preciso ser certificado ISO 9001 para contratar a ORBEEX?</summary>
-        <p>Não. Boa parte do trabalho é com empresas que querem organizar processos sem buscar certificação. A ISO 9001 entra como referência de boas práticas, e o escopo é ajustado ao que a empresa realmente precisa — se a certificação for um objetivo, o caminho é preparado desde o começo.</p>
+        <p>Não. Muitos projetos são com empresas que querem organizar processos sem buscar certificação. A ISO 9001 entra como referência, e o escopo é ajustado ao que a empresa precisa.</p>
       </details>
       <details class="faq-item">
         <summary>A ORBEEX faz a auditoria de certificação?</summary>
-        <p>Não, e isso é proposital: a auditoria de certificação é feita por um organismo certificador acreditado, e quem implanta não pode certificar. A ORBEEX conduz as auditorias internas, prepara a empresa e a equipe para a auditoria externa e acompanha o tratamento das não conformidades levantadas.</p>
+        <p>Não — quem implanta não pode certificar. A auditoria de certificação é feita por um organismo acreditado; a ORBEEX conduz as auditorias internas e prepara a empresa para a externa.</p>
       </details>
       <details class="faq-item">
         <summary>Como funciona a assessoria de manutenção do sistema de gestão?</summary>
-        <p>É um acompanhamento contínuo com carga horária mensal combinada: atualização de documentos, condução das auditorias internas, análise crítica, indicadores, planos de ação e preparação para a auditoria externa. Na prática, é ter um especialista da qualidade à disposição sem o custo fixo de um profissional integral.</p>
+        <p>Acompanhamento contínuo com carga horária mensal combinada: documentos, auditorias internas, indicadores e planos de ação — como ter um especialista da qualidade sem o custo fixo integral.</p>
       </details>
       <details class="faq-item">
         <summary>Quanto tempo leva para estruturar um sistema de gestão?</summary>
-        <p>Depende do porte, da complexidade dos processos e da disponibilidade da equipe. O diagnóstico inicial já indica um cronograma realista por etapas — e o trabalho é organizado para que cada fase entregue algo utilizável, sem esperar o projeto inteiro terminar.</p>
+        <p>Depende do porte e da complexidade dos processos. O diagnóstico inicial já indica um cronograma por etapas, cada uma entregando algo utilizável — sem esperar o projeto inteiro terminar.</p>
       </details>
       <details class="faq-item">
         <summary>O atendimento é presencial ou remoto?</summary>
-        <p>Os dois. A base é Bento Gonçalves/RS, com atendimento presencial na Serra Gaúcha e remoto para todo o Brasil. Na prática, a maioria dos projetos combina os dois formatos: encontros presenciais nos momentos-chave e acompanhamento remoto na rotina.</p>
+        <p>Os dois. Atendimento presencial na Serra Gaúcha e remoto para todo o Brasil — a maioria dos projetos combina encontros presenciais em momentos-chave com acompanhamento remoto na rotina.</p>
       </details>
       <details class="faq-item">
         <summary>É obrigatório usar o Strategya?</summary>
-        <p>Não. O Strategya é o software desenvolvido pela ORBEEX e facilita bastante a rotina, mas a assessoria funciona com as ferramentas que a empresa já usa. Ele também pode ser contratado separadamente, por quem já tem equipe própria da qualidade.</p>
+        <p>Não. O Strategya facilita bastante a rotina, mas a assessoria funciona com as ferramentas que a empresa já usa — e ele também pode ser contratado à parte.</p>
       </details>
+    </div>
+    <div class="section-cta">
+      <a href="#contato" class="btn btn-navy">
+        Ainda com dúvidas? Fale com a gente
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
     </div>
   </div>
 </section>
@@ -859,7 +895,7 @@
       <div>
         <div class="section-kicker">Contato</div>
         <h2 class="section-title">Vamos resolver o problema certo?</h2>
-        <p class="section-lede">Conte em poucas linhas o momento da sua empresa. A primeira conversa é sem compromisso e serve para entender se — e como — a ORBEEX pode ajudar.</p>
+        <p class="section-lede">Conte em poucas linhas o momento da sua empresa — a primeira conversa é sem compromisso.</p>
         <div class="contato-info">
           <div class="contato-item">
             <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 7l9 6 9-6"/></svg>

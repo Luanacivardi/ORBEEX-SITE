@@ -154,6 +154,12 @@
   .hero-sub { font-size: 17px; color: rgba(255,255,255,0.78); max-width: 620px; margin: 0 auto 2rem; }
   .hero-price { font-size: 15px; color: rgba(255,255,255,.6); margin-top: 1.4rem; }
   .hero-price strong { color: #fff; font-size: 17px; }
+  .price-anchor {
+    display: flex; align-items: baseline; justify-content: center; gap: 10px; margin-bottom: 1.1rem;
+  }
+  .price-anchor .de { font-size: 15px; color: rgba(255,255,255,.5); }
+  .price-anchor .de s { text-decoration-color: rgba(255,255,255,.5); }
+  .price-anchor .por { font-size: 13px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: var(--gold); background: rgba(232,184,75,0.14); padding: 4px 12px; border-radius: 999px; }
   .hero-proof {
     display: flex; gap: 1.6rem; justify-content: center; flex-wrap: wrap;
     margin-top: 2rem; font-size: 13.5px; color: rgba(255,255,255,.65);
@@ -197,6 +203,9 @@
     display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase;
     color: var(--gold-dark); background: var(--gold-bg); padding: 2px 8px; border-radius: 5px; margin-bottom: 6px;
   }
+  .conteudo-item.bonus { border: 1.5px dashed var(--gold-dark); background: var(--gold-bg); }
+  .conteudo-item.bonus .conteudo-num { background: var(--gold); color: var(--navy); }
+  .conteudo-tag.bonus-tag { color: var(--navy); background: var(--gold); }
 
   /* AUTORIA */
   .autoria { background: var(--bg-light); }
@@ -288,12 +297,16 @@
       Guia, checklist ISO 9001, modelo de relatório e planilhas de gestão prontos — a mesma metodologia
       que a ORBEEX usa com clientes de consultoria, em arquivos editáveis pra você aplicar na sua empresa hoje.
     </p>
+    <div class="price-anchor">
+      <span class="de">De <s>R$ 197</s></span>
+      <span class="por">Lançamento: R$ 147</span>
+    </div>
     <a href="#comprar" class="btn btn-gold">
       Quero o kit por R$ 147
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </a>
     <div class="hero-proof">
-      <span>5 arquivos editáveis (Word e Excel)</span>
+      <span>5 arquivos + 1 bônus (Word e Excel)</span>
       <span>Acesso imediato</span>
       <span>Garantia de 7 dias</span>
     </div>
@@ -333,7 +346,7 @@
   <div class="container">
     <div class="section-head">
       <div class="section-kicker">O que você recebe</div>
-      <h2 class="section-title">5 arquivos, prontos pra usar na sua empresa</h2>
+      <h2 class="section-title">5 arquivos + 1 bônus, prontos pra usar na sua empresa</h2>
       <p class="section-lede">Editáveis, sem senha — adapte a logo e o conteúdo à sua realidade.</p>
     </div>
     <div class="conteudo-list">
@@ -377,6 +390,14 @@
           <p>Não conformidade → causa raiz → ação → responsável → verificação de eficácia, com status em lista suspensa.</p>
         </div>
       </div>
+      <div class="conteudo-item bonus">
+        <div class="conteudo-num hex">+1</div>
+        <div>
+          <span class="conteudo-tag bonus-tag">Bônus grátis · Word</span>
+          <h3>Modelo de Análise de Causa Raiz — 5 Porquês</h3>
+          <p>O passo que falta entre "achou a não conformidade" e "resolveu de verdade" — pronto pra usar junto com o Plano de Ação.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -402,10 +423,13 @@
 <section id="comprar" class="preco reveal">
   <div class="container">
     <div class="section-head">
-      <div class="section-kicker" style="color:var(--gold)">Kit de Auditoria Interna</div>
+      <div class="section-kicker" style="color:var(--gold)">Oferta de lançamento</div>
       <h2 class="section-title" style="color:#fff">Comece a rodar auditorias que geram resultado</h2>
     </div>
     <div class="preco-card">
+      <div class="price-anchor">
+        <span class="de">De <s>R$ 197</s></span>
+      </div>
       <div class="preco-valor">R$ 147<span>,00</span></div>
       <div class="preco-parcelas">ou em até 12x no cartão</div>
       <ul class="preco-inclui">
@@ -414,6 +438,7 @@
         <li>Modelo de relatório de auditoria</li>
         <li>Programa anual de auditoria (planilha)</li>
         <li>Plano de ação com verificação de eficácia (planilha)</li>
+        <li><strong>Bônus grátis:</strong> Modelo de Análise de Causa Raiz (5 Porquês)</li>
       </ul>
       <a href="https://pay.kiwify.com.br/MclZnVF" class="btn btn-gold btn-block" target="_blank" rel="noopener">
         Quero o kit agora

@@ -234,7 +234,7 @@
 
   /* ---- diagrama orbital (PDCA) ---- */
   .orbit-wrap { display: flex; justify-content: center; align-items: center; position: relative; }
-  .orbit-diagram { position: relative; width: min(300px, 78vw); aspect-ratio: 1; }
+  .orbit-diagram { position: relative; width: min(420px, 34vw); aspect-ratio: 1; }
   .orbit-ring { position: absolute; inset: 0; width: 100%; height: 100%; animation: orbit-spin 90s linear infinite; }
   .orbit-arc { stroke-dasharray: 90 460; animation: orbit-dash 6s ease-in-out infinite alternate; }
   .orbit-core {
@@ -246,8 +246,8 @@
     border: 1px solid rgba(232,184,75,.5); display: flex; flex-direction: column;
     align-items: center; justify-content: center; text-align: center; backdrop-filter: blur(2px);
   }
-  .orbit-node .letter { font-family: var(--font-mono); font-weight: 600; font-size: 15px; color: var(--gold); }
-  .orbit-node .word { font-size: 7.5px; letter-spacing: .4px; text-transform: uppercase; color: rgba(255,255,255,.6); margin-top: 2px; }
+  .orbit-node .letter { font-family: var(--font-mono); font-weight: 600; font-size: 20px; color: var(--gold); }
+  .orbit-node .word { font-size: 9.5px; letter-spacing: .4px; text-transform: uppercase; color: rgba(255,255,255,.6); margin-top: 3px; }
   .orbit-node.n { top: -3%; left: 50%; transform: translate(-50%,0); }
   .orbit-node.e { top: 50%; right: -3%; transform: translate(0,-50%); }
   .orbit-node.s { bottom: -3%; left: 50%; transform: translate(-50%,0); }
@@ -485,7 +485,7 @@
     .hero-sub { margin-left: auto; margin-right: auto; }
     .hero-actions { justify-content: center; }
     .hero-proof { justify-content: center; }
-    .orbit-diagram { width: min(260px, 62vw); }
+    .orbit-diagram { width: min(340px, 72vw); }
     .sobre-grid, .contato-grid, .mvv-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .mvv-grid { gap: 1.2rem; }
     .metodo-timeline { grid-template-columns: 1fr 1fr; row-gap: 2.4rem; }

@@ -29,6 +29,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 
+<script src="js/orbeex-analytics.js" defer></script>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -458,6 +460,32 @@
   form.form-card .btn { width: 100%; margin-top: .4rem; }
   .form-note { font-size: 12.5px; color: rgba(255,255,255,.55); margin-top: .9rem; text-align: center; }
   .form-note a { color: var(--gold); }
+  .field-consent { display: flex; align-items: flex-start; gap: 10px; margin-top: .2rem; }
+  .field-consent input { width: 17px; height: 17px; flex-shrink: 0; margin-top: 2px; accent-color: var(--gold); cursor: pointer; }
+  .field-consent label { font-size: 12.5px; line-height: 1.5; color: rgba(255,255,255,.7); cursor: pointer; margin: 0; font-weight: 400; }
+  .field-consent a { color: var(--gold); }
+  .hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .form-erro {
+    display: none; font-size: 13.5px; line-height: 1.5; color: #ffd9d4;
+    background: rgba(214,78,66,.18); border: 1px solid rgba(255,150,140,.35);
+    border-radius: var(--radius-sm); padding: 11px 14px; margin-top: .9rem;
+  }
+  .form-erro.visivel { display: block; }
+  .form-erro a { color: var(--gold); }
+  form.form-card .btn[aria-busy="true"] { opacity: .72; cursor: progress; }
+  .form-sucesso { text-align: center; padding: 1.4rem .4rem; }
+  .form-sucesso .icone {
+    width: 52px; height: 52px; border-radius: 50%; margin: 0 auto 1.1rem;
+    display: grid; place-items: center;
+    background: var(--gold-soft); color: var(--gold); border: 1px solid rgba(232,184,75,.4);
+  }
+  .form-sucesso h3 {
+    font-family: var(--font-display); font-size: 20px; font-weight: 700;
+    color: #fff; margin-bottom: .6rem; letter-spacing: -.01em;
+  }
+  .form-sucesso p { font-size: 14.5px; color: rgba(255,255,255,.66); line-height: 1.6; }
+  .form-sucesso p + p { margin-top: .5rem; }
+  .form-sucesso a { color: var(--gold); }
 
   /* ===== FOOTER ===== */
   footer { background: #101022; color: rgba(255,255,255,0.5); padding: 2.5rem 0; font-size: 12.5px; }
@@ -555,7 +583,7 @@
         planejamento estratégico, pensada para PMEs que não querem o custo fixo de um profissional em tempo integral.
       </p>
       <div class="hero-actions">
-        <a href="#contato" class="btn btn-gold">
+        <a href="#contato" class="btn btn-gold" data-track="clique_cta" data-track-item="hero-diagnostico">
           Quero um diagnóstico inicial
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
@@ -860,7 +888,7 @@
         contratado separadamente por quem já tem equipe própria da qualidade.
       </p>
       <div class="strategya-actions">
-        <a href="https://strategya.orbeex.com.br" class="btn btn-gold" target="_blank" rel="noopener">
+        <a href="https://strategya.orbeex.com.br" class="btn btn-gold" target="_blank" rel="noopener" data-track="clique_strategya" data-track-item="acessar-software">
           Acessar o Strategya
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5a1.8 1.8 0 01-1.8 1.8H5A1.8 1.8 0 013.2 19V7.8A1.8 1.8 0 015 6h5"/></svg>
         </a>
@@ -977,7 +1005,7 @@
         <h3 style="margin-top:8px">Ainda não é hora de contratar uma assessoria?</h3>
         <p>Conheça os guias e planilhas editáveis da ORBEEX: a metodologia real de consultoria em arquivos prontos para você aplicar sozinho, sem o custo de uma assessoria completa.</p>
       </div>
-      <a href="produtos/" class="btn btn-outline-ink">
+      <a href="produtos/" class="btn btn-outline-ink" data-track="ver_produto" data-track-item="lista-produtos">
         Ver produtos
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
@@ -1112,12 +1140,24 @@
           <label for="f-msg">Conte um pouco da situação</label>
           <textarea id="f-msg" name="mensagem" placeholder="Ex.: temos ISO 9001 desde 2023, mas o sistema só é atualizado perto da auditoria."></textarea>
         </div>
-        <button type="submit" class="btn btn-gold">
-          Enviar mensagem
+        <div class="field-consent">
+          <input type="checkbox" id="f-consent" name="consentimento" required>
+          <label for="f-consent">
+            Concordo que a ORBEEX use os dados acima para responder ao meu contato, conforme a
+            <a href="privacidade/">Política de Privacidade</a>.
+          </label>
+        </div>
+        <div class="hp-field" aria-hidden="true">
+          <label for="f-site">Não preencha este campo</label>
+          <input type="text" id="f-site" name="site" tabindex="-1" autocomplete="off">
+        </div>
+        <button type="submit" class="btn btn-gold" id="btn-enviar">
+          <span id="btn-enviar-txt">Enviar mensagem</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3L10.5 13.5"/><path d="M21 3l-6.8 18-3.7-7.5L3 9.8 21 3z"/></svg>
         </button>
+        <p class="form-erro" id="form-erro" role="alert"></p>
         <p class="form-note">
-          O botão abre seu programa de e-mail com a mensagem já montada.
+          Retorno em até 1 dia útil.
           Prefere escrever direto? <a href="mailto:luana.civardi@orbeex.com.br">luana.civardi@orbeex.com.br</a>
         </p>
       </form>
@@ -1138,6 +1178,9 @@
       <a href="produtos/">Produtos</a>
       <a href="https://www.linkedin.com/company/91048322/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="mailto:luana.civardi@orbeex.com.br">E-mail</a>
+      <a href="privacidade/">Privacidade</a>
+      <a href="termos/">Termos de Uso</a>
+      <a href="#" data-consent-refazer>Cookies</a>
     </nav>
     <div>ORBEEX Assessoria em Sistemas de Gestão LTDA · CNPJ 49.759.143/0001-70 · Bento Gonçalves/RS</div>
   </div>
@@ -1179,36 +1222,147 @@
     alvos.forEach(function (el) { obs.observe(el); });
   })();
 
-  // Formulário -> monta o e-mail já preenchido
+  /* Formulário de contato
+     -------------------------------------------------------------------------
+     PARA ATIVAR O ENVIO REAL: troque WEB3FORMS_KEY pela chave de acesso obtida
+     em web3forms.com (informe luana.civardi@orbeex.com.br lá e a chave chega
+     por e-mail). Enquanto o valor for o placeholder, o formulário continua
+     funcionando pelo programa de e-mail do visitante, como antes — o site
+     nunca fica sem forma de contato.
+     --------------------------------------------------------------------- */
   (function () {
+    var WEB3FORMS_KEY = 'COLE-A-CHAVE-AQUI';
+    var EMAIL = 'luana.civardi@orbeex.com.br';
+
+    var envioRealAtivo = /^[0-9a-f-]{30,}$/i.test(WEB3FORMS_KEY);
+
     var form = document.getElementById('form-contato');
+    var botao = document.getElementById('btn-enviar');
+    var botaoTxt = document.getElementById('btn-enviar-txt');
+    var caixaErro = document.getElementById('form-erro');
+
+    function v(id) { return (document.getElementById(id).value || '').trim(); }
+
+    function mostrarErro(html) {
+      caixaErro.innerHTML = html;
+      caixaErro.classList.add('visivel');
+      caixaErro.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+
+    function limparErro() {
+      caixaErro.classList.remove('visivel');
+      caixaErro.textContent = '';
+    }
+
+    function ocupado(sim) {
+      botao.disabled = sim;
+      botao.setAttribute('aria-busy', String(sim));
+      botaoTxt.textContent = sim ? 'Enviando…' : 'Enviar mensagem';
+    }
+
+    function mostrarSucesso(nome) {
+      form.innerHTML =
+        '<div class="form-sucesso">' +
+          '<div class="icone" aria-hidden="true">' +
+            '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>' +
+          '</div>' +
+          '<h3>Mensagem enviada, ' + nome.split(' ')[0] + '.</h3>' +
+          '<p>Recebi seu contato e respondo em até 1 dia útil, no e-mail que você informou.</p>' +
+          '<p>Se for urgente, pode escrever direto para <a href="mailto:' + EMAIL + '">' + EMAIL + '</a>.</p>' +
+        '</div>';
+      form.setAttribute('aria-live', 'polite');
+    }
+
+    function montarCorpo(dados) {
+      return [
+        'Nome: ' + dados.nome,
+        'Empresa: ' + dados.empresa,
+        'E-mail: ' + dados.email,
+        'Porte: ' + (dados.porte || 'não informado'),
+        'Necessidade: ' + dados.assunto,
+        '',
+        'Mensagem:',
+        dados.mensagem || '(sem mensagem)',
+        '',
+        '— Enviado pelo formulário do site orbeex.com.br'
+      ].join('\n');
+    }
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var v = function (id) { return (document.getElementById(id).value || '').trim(); };
-      var nome = v('f-nome'), empresa = v('f-empresa'), email = v('f-email');
+      limparErro();
 
-      if (!nome || !empresa || !email) {
-        alert('Preencha nome, empresa e e-mail para eu conseguir retornar o contato.');
+      var dados = {
+        nome: v('f-nome'),
+        empresa: v('f-empresa'),
+        email: v('f-email'),
+        porte: v('f-porte'),
+        assunto: v('f-assunto') || 'Contato pelo site',
+        mensagem: v('f-msg')
+      };
+
+      if (!dados.nome || !dados.empresa || !dados.email) {
+        mostrarErro('Preencha nome, empresa e e-mail para eu conseguir retornar o contato.');
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(dados.email)) {
+        mostrarErro('Confira o e-mail: ele parece incompleto, e é por ele que eu respondo.');
+        return;
+      }
+      if (!document.getElementById('f-consent').checked) {
+        mostrarErro('Marque a autorização de uso dos dados para eu poder responder seu contato.');
         return;
       }
 
-      var assunto = v('f-assunto') || 'Contato pelo site';
-      var linhas = [
-        'Nome: ' + nome,
-        'Empresa: ' + empresa,
-        'E-mail: ' + email,
-        'Porte: ' + (v('f-porte') || 'não informado'),
-        'Necessidade: ' + assunto,
-        '',
-        'Mensagem:',
-        v('f-msg') || '(sem mensagem)',
-        '',
-        '— Enviado pelo site orbeex.com.br'
-      ];
+      // Campo isca: só robô preenche. Fingimos sucesso e não enviamos nada.
+      if (v('f-site')) { mostrarSucesso(dados.nome); return; }
 
-      window.location.href = 'mailto:luana.civardi@orbeex.com.br'
-        + '?subject=' + encodeURIComponent('[Site] ' + assunto + ' — ' + empresa)
-        + '&body=' + encodeURIComponent(linhas.join('\n'));
+      if (window.orbeexEvento) {
+        window.orbeexEvento('lead_formulario', { item: dados.assunto });
+      }
+
+      if (!envioRealAtivo) {
+        window.location.href = 'mailto:' + EMAIL
+          + '?subject=' + encodeURIComponent('[Site] ' + dados.assunto + ' — ' + dados.empresa)
+          + '&body=' + encodeURIComponent(montarCorpo(dados));
+        return;
+      }
+
+      ocupado(true);
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: '[Site ORBEEX] ' + dados.assunto + ' — ' + dados.empresa,
+          from_name: 'Site ORBEEX',
+          name: dados.nome,
+          email: dados.email,
+          empresa: dados.empresa,
+          porte: dados.porte || 'não informado',
+          necessidade: dados.assunto,
+          message: dados.mensagem || '(sem mensagem)'
+        })
+      })
+        .then(function (r) { return r.json().catch(function () { return { success: r.ok }; }); })
+        .then(function (resposta) {
+          if (resposta && resposta.success) {
+            mostrarSucesso(dados.nome);
+          } else {
+            throw new Error((resposta && resposta.message) || 'falha no envio');
+          }
+        })
+        .catch(function () {
+          ocupado(false);
+          mostrarErro(
+            'Não consegui enviar sua mensagem agora — pode ser instabilidade de conexão. ' +
+            'Tente de novo em instantes ou escreva direto para ' +
+            '<a href="mailto:' + EMAIL + '?subject=' + encodeURIComponent('[Site] ' + dados.assunto + ' — ' + dados.empresa) +
+            '&body=' + encodeURIComponent(montarCorpo(dados)) + '">' + EMAIL + '</a> ' +
+            '— esse link já vai com tudo que você escreveu.'
+          );
+        });
     });
   })();
 </script>

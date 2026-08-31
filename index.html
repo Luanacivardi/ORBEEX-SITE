@@ -1224,14 +1224,15 @@
 
   /* Formulário de contato
      -------------------------------------------------------------------------
-     PARA ATIVAR O ENVIO REAL: troque WEB3FORMS_KEY pela chave de acesso obtida
-     em web3forms.com (informe luana.civardi@orbeex.com.br lá e a chave chega
-     por e-mail). Enquanto o valor for o placeholder, o formulário continua
-     funcionando pelo programa de e-mail do visitante, como antes — o site
-     nunca fica sem forma de contato.
+     Envio real ATIVO via web3forms.com — as mensagens chegam em
+     luana.civardi@orbeex.com.br. A chave abaixo é pública por natureza
+     (roda no navegador do visitante) e só serve para entregar mensagem
+     nessa caixa; não dá acesso a nada. Se o serviço falhar, o formulário
+     volta sozinho para o programa de e-mail do visitante — o site nunca
+     fica sem forma de contato.
      --------------------------------------------------------------------- */
   (function () {
-    var WEB3FORMS_KEY = 'COLE-A-CHAVE-AQUI';
+    var WEB3FORMS_KEY = '2025e857-c051-4472-9b60-1570e1ab978d';
     var EMAIL = 'luana.civardi@orbeex.com.br';
 
     var envioRealAtivo = /^[0-9a-f-]{30,}$/i.test(WEB3FORMS_KEY);

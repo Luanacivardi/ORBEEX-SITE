@@ -29,7 +29,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="/css/orbeex-captura.css">
+
 <script src="../js/orbeex-analytics.js" defer></script>
+<script src="/js/orbeex-captura.js" defer></script>
 
 <script type="application/ld+json">
 {
@@ -243,11 +246,30 @@
         <h2>Pack Certificação SGQ</h2>
         <p>Kit completo para levar o sistema de gestão da qualidade do zero até a auditoria de certificação ISO 9001. Em produção.</p>
         <ul class="produto-inclui">
-          <li>Ainda em desenvolvimento</li>
+          <li>Em produção — sem data de lançamento ainda</li>
+          <li>Quem entra na lista é avisado antes</li>
         </ul>
+        <a href="#lista-espera" class="btn btn-outline-ink btn-block" data-track="ver_lista_espera" data-track-item="pack-certificacao">
+          Avise-me quando lançar
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
       </article>
 
     </div>
+  </div>
+</section>
+
+<!-- ===== CAPTURA DE E-MAIL ===== -->
+<section class="reveal" style="padding: 0 0 40px;">
+  <div class="container">
+    <div class="ox-captura" data-modo="isca" data-origem="produtos"></div>
+  </div>
+</section>
+
+<!-- ===== LISTA DE ESPERA (OM-02) ===== -->
+<section class="reveal" id="lista-espera" style="padding: 0 0 72px; scroll-margin-top: 90px;">
+  <div class="container">
+    <div class="ox-captura ox-compacta" data-modo="espera" data-origem="produtos-pack"></div>
   </div>
 </section>
 

@@ -11,8 +11,13 @@
    validação e as mensagens continuam iguais.
 
    Modos disponíveis (atributo data-modo no elemento):
-     "isca"   → entrega o guia das 10 não conformidades (padrão)
-     "espera" → lista de espera do Pack Certificação SGQ
+     "isca"              → entrega o guia das 10 não conformidades (padrão)
+     "espera"            → lista de espera do Pack Certificação SGQ
+     "espera-kit"        → lista de lançamento do Kit de Auditoria Interna
+     "espera-fornecedor" → lista de lançamento do Fornecedor Sob Controle
+
+   Os dois últimos existem porque a venda dos kits está pausada até a
+   atualização para a ISO 9001:2026, publicada em 16/09/2026.
    ========================================================================= */
 (function () {
   'use strict';
@@ -57,6 +62,42 @@
       sucessoTexto: 'Você entra na lista do Pack Certificação SGQ. Enquanto isso, os dois kits que já existem estão na página de produtos.',
       destino: '/produtos/',
       destinoRotulo: 'Ver os produtos disponíveis'
+    },
+    'espera-kit': {
+      kicker: 'Lista de lançamento',
+      titulo: 'O Kit de Auditoria Interna está sendo atualizado para a ISO 9001:2026',
+      sub: 'A nova edição da norma é publicada em 16 de setembro de 2026. Em vez de vender agora um material construído sobre a edição anterior, prefiro atualizar o kit e reabrir depois — com a versão marcada de forma explícita. Quem entrar na lista é avisado primeiro.',
+      itens: [
+        'Aviso antes de reabrir para o público geral',
+        'Condição de lançamento reservada para a lista',
+        'Nenhuma cobrança e nenhum compromisso agora'
+      ],
+      botao: 'Avise-me no lançamento',
+      nota: 'Só escrevo quando tiver novidade real sobre o kit.',
+      assunto: 'Lista de lançamento — Kit de Auditoria Interna',
+      evento: 'lista_espera',
+      sucessoTitulo: 'Anotado, {nome}.',
+      sucessoTexto: 'Você é avisada assim que o kit atualizado abrir. Enquanto isso, o guia das 10 não conformidades mais comuns em auditoria está liberado.',
+      destino: '/guia/nao-conformidades-iso-9001/',
+      destinoRotulo: 'Ler o guia gratuito'
+    },
+    'espera-fornecedor': {
+      kicker: 'Lista de lançamento',
+      titulo: 'O Fornecedor Sob Controle está sendo revisado para a ISO 9001:2026',
+      sub: 'A nova edição da norma é publicada em 16 de setembro de 2026. Antes de voltar a vender, quero conferir o que muda no Requisito 8.4 e marcar a versão de forma explícita no material. Quem entrar na lista é avisado primeiro.',
+      itens: [
+        'Aviso antes de reabrir para o público geral',
+        'Condição de lançamento reservada para a lista',
+        'Nenhuma cobrança e nenhum compromisso agora'
+      ],
+      botao: 'Avise-me no lançamento',
+      nota: 'Só escrevo quando tiver novidade real sobre o material.',
+      assunto: 'Lista de lançamento — Fornecedor Sob Controle',
+      evento: 'lista_espera',
+      sucessoTitulo: 'Anotado, {nome}.',
+      sucessoTexto: 'Você é avisada assim que o material revisado abrir. Enquanto isso, o guia das 10 não conformidades mais comuns em auditoria está liberado.',
+      destino: '/guia/nao-conformidades-iso-9001/',
+      destinoRotulo: 'Ler o guia gratuito'
     }
   };
 

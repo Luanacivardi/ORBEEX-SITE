@@ -30,6 +30,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="/css/orbeex-captura.css">
+<link rel="stylesheet" href="/css/orbeex-depoimentos.css">
 
 <script src="../js/orbeex-analytics.js" defer></script>
 <script src="/js/orbeex-captura.js" defer></script>
@@ -46,7 +47,7 @@
       "item": {
         "@type": "Product", "name": "Fornecedor Sob Controle — Guia Completo do Requisito 8.4",
         "url": "https://orbeex.com.br/fornecedor-sob-controle/",
-        "offers": { "@type": "Offer", "priceCurrency": "BRL", "price": "97.00", "availability": "https://schema.org/InStock" }
+        "offers": { "@type": "Offer", "priceCurrency": "BRL", "availability": "https://schema.org/PreOrder" }
       }
     },
     {
@@ -54,7 +55,7 @@
       "item": {
         "@type": "Product", "name": "Kit de Auditoria Interna ORBEEX",
         "url": "https://orbeex.com.br/kit-auditoria-interna/",
-        "offers": { "@type": "Offer", "priceCurrency": "BRL", "price": "147.00", "availability": "https://schema.org/InStock" }
+        "offers": { "@type": "Offer", "priceCurrency": "BRL", "availability": "https://schema.org/PreOrder" }
       }
     }
   ]
@@ -202,18 +203,17 @@
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="13" height="18" rx="2"/><path d="M8 8h5M8 12h5M8 16h3"/><circle cx="18" cy="17" r="4" fill="none"/><path d="M21 20l2.2 2.2"/></svg>
         </div>
         <h2>Kit de Auditoria Interna</h2>
-        <p>Guia, checklist ISO 9001, modelo de relatório e planilhas de gestão prontos para rodar auditorias internas que geram resultado.</p>
+        <p>Guia-mapa, classificação de risco, agenda, atas, checklist e relatório com fórmulas — o ciclo completo de auditoria interna que gera resultado.</p>
         <ul class="produto-inclui">
-          <li>6 arquivos editáveis: 5 + 1 bônus (Word e Excel)</li>
+          <li>12 arquivos editáveis: 8 + 4 bônus (Word, Excel e Gamma)</li>
           <li>Programa anual de auditoria com priorização por risco</li>
-          <li>Plano de ação com verificação de eficácia</li>
+          <li>Avaliação do auditor interno</li>
         </ul>
         <div class="produto-preco">
-          <span class="de">De <s>R$ 197</s></span>
-          <span class="por">R$ 147<span>,00</span></span>
+          <span class="por" style="font-size:16px;">Em atualização para a ISO 9001:2026</span>
         </div>
-        <a href="../kit-auditoria-interna/" class="btn btn-outline-ink btn-block" data-track="ver_produto" data-track-item="kit-auditoria-interna">
-          Ver o kit
+        <a href="../kit-auditoria-interna/#comprar" class="btn btn-outline-ink btn-block" data-track="ver_produto" data-track-item="kit-auditoria-interna">
+          Entrar na lista
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </article>
@@ -230,14 +230,37 @@
           <li>Bônus: 10 prompts de IA para gestão de fornecedores</li>
         </ul>
         <div class="produto-preco">
-          <span class="de">De <s>R$ 127</s></span>
-          <span class="por">R$ 97<span>,00</span></span>
+          <span class="por" style="font-size:16px;">Em revisão para a ISO 9001:2026</span>
         </div>
-        <a href="../fornecedor-sob-controle/" class="btn btn-outline-ink btn-block" data-track="ver_produto" data-track-item="fornecedor-sob-controle">
-          Ver o kit
+        <a href="../fornecedor-sob-controle/#comprar" class="btn btn-outline-ink btn-block" data-track="ver_produto" data-track-item="fornecedor-sob-controle">
+          Entrar na lista
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </article>
+
+      <!-- Card do Plano de Ação com 5 Porquês — fora do ar por enquanto.
+           A página /plano-de-acao-5-porques/ ainda não foi publicada e o botão
+           de compra dela é um placeholder. Para reativar: descomentar este
+           bloco e a entrada correspondente no JSON-LD acima.
+      <article class="produto-card">
+        <div class="produto-hex hex" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 16v.01M12 8a2.5 2.5 0 0 1 2.5 2.5c0 1.5-2.5 2-2.5 3.5"/></svg>
+        </div>
+        <h2>Plano de Ação com 5 Porquês</h2>
+        <p>Planilha de plano de ação com o método dos 5 Porquês embutido, pra chegar na causa raiz de qualquer não conformidade.</p>
+        <ul class="produto-inclui">
+          <li>1 arquivo Excel, 2 abas (guia rápido + planilha)</li>
+          <li>Funciona sozinho, sem precisar do kit completo</li>
+        </ul>
+        <div class="produto-preco">
+          <span class="por">R$ 9<span>,90</span></span>
+        </div>
+        <a href="../plano-de-acao-5-porques/" class="btn btn-outline-ink btn-block" data-track="ver_produto" data-track-item="plano-de-acao-5-porques">
+          Ver a planilha
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </article>
+      -->
 
       <article class="produto-card em-breve">
         <span class="badge-embreve">Em breve</span>
@@ -256,6 +279,49 @@
         </a>
       </article>
 
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== PROVA SOCIAL ===== -->
+<section class="reveal" style="padding: 0 0 3rem;">
+  <div class="container">
+    <div class="section-head center">
+      <div class="section-kicker">Quem trabalha com a ORBEEX</div>
+      <h2 class="section-title">A metodologia por trás dos kits</h2>
+      <p class="section-lede">Depoimentos de clientes da assessoria — o método que eles descrevem é o mesmo que virou estes arquivos.</p>
+    </div>
+    <div class="ox-prova ox-prova-compacta">
+      <div class="ox-prova-grade">
+        <figure class="ox-dep">
+          <div class="ox-aspas" aria-hidden="true">&ldquo;</div>
+          <blockquote>A assessoria ORBEEX contribui para a melhoria da organização e padronização dos processos da qualidade, proporcionando maior clareza à equipe, mais controle das atividades e redução de falhas. Também trouxe mais segurança para a gestão, com processos melhor estruturados, acompanhamento dos indicadores e identificação mais ágil de oportunidades de melhoria, resultando em maior consistência e eficiência nos resultados.</blockquote>
+          <div class="ox-assina">
+              <span class="ox-nome">Evelyn Rosana Bergossa</span>
+              <span class="ox-cargo">Líder Administrativo · <span class="ox-empresa">Maxicorte Indústria e Comércio de Aços</span></span>
+
+          </div>
+        </figure>
+        <figure class="ox-dep">
+          <div class="ox-aspas" aria-hidden="true">&ldquo;</div>
+          <blockquote>Tivemos um resultado muito positivo, pois o time da ORBEEX, com toda sua experiência, foi assertivo no entendimento do nosso processo, conseguindo aplicar ferramentas para maximizar a eficiência do nosso negócio.</blockquote>
+          <div class="ox-assina">
+              <span class="ox-nome">Alexandre Costacurta</span>
+              <span class="ox-cargo">Diretor de Engenharia · <span class="ox-empresa">Tecbrasil Máquinas e Equipamentos</span></span>
+
+          </div>
+        </figure>
+        <figure class="ox-dep">
+          <div class="ox-aspas" aria-hidden="true">&ldquo;</div>
+          <blockquote>Excelente assessoria! Com uma ampla expertise de mercado e entrega resultados que superam as expectativas. Além disso, atua com agilidade e competência na resolução de problemas complexos, trazendo soluções altamente eficazes.</blockquote>
+          <div class="ox-assina">
+              <span class="ox-nome">Andressa Dal Berto</span>
+              <span class="ox-cargo">Sócia · <span class="ox-empresa">Studio DinDal</span></span>
+
+          </div>
+        </figure>
+      </div>
     </div>
   </div>
 </section>

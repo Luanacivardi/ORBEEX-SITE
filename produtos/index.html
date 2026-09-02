@@ -62,66 +62,14 @@
 }
 </script>
 
+<link rel="stylesheet" href="/css/orbeex-base.css">
 <style>
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-  :root {
-    --ink: #15152a;
-    --ink-2: #1e1e3a;
-    --ink-3: #29294a;
-    --gold: #e8b84b;
-    --gold-deep: #b3872b;
-    --paper: #faf8f2;
-    --paper-2: #f2efe3;
-    --white: #ffffff;
-    --text: #1a1a2e;
-    --text-soft: #5c5c78;
-    --text-faint: #8b8ba3;
-    --line: #e7e2d4;
-    --line-onwhite: #e5e2ee;
-    --radius: 16px;
-    --shadow-md: 0 16px 40px rgba(21,21,42,.12);
-    --font-display: 'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-    --font-mono: 'IBM Plex Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
-    --maxw: 1180px;
-  }
-
-  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-  body { font-family: var(--font-sans); color: var(--text); line-height: 1.6; background: var(--white); -webkit-font-smoothing: antialiased; }
-  a { text-decoration: none; color: inherit; }
-  img { max-width: 100%; }
-  ul { list-style: none; }
-  :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
-
-  .container { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
-  .hex { clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); }
-  .mono-tag { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: .5px; color: var(--gold-deep); text-transform: uppercase; }
-
-  header { position: sticky; top: 0; z-index: 100; background: rgba(250,248,242,0.88); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
-  header .container { display: flex; align-items: center; justify-content: space-between; height: 74px; gap: 1rem; }
-  .brand-mark img { height: 32px; width: auto; display: block; }
-  header nav { display: flex; align-items: center; gap: 1.6rem; }
-  header nav a { color: var(--text-soft); font-size: 14.5px; font-weight: 500; transition: color .15s; white-space: nowrap; }
-  header nav a:hover { color: var(--ink); }
-  .nav-cta { background: var(--ink); color: #fff !important; padding: 10px 20px; border-radius: 8px; font-weight: 600 !important; transition: background .18s, transform .18s; }
-  .nav-cta:hover { background: var(--ink-3); transform: translateY(-1px); }
-
-  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 15px 30px; border-radius: 10px; font-weight: 700; font-size: 15px; transition: transform .18s, background .18s, border-color .18s, color .18s; border: none; cursor: pointer; font-family: inherit; text-align: center; }
-  .btn svg { flex-shrink: 0; }
-  .btn-gold { background: var(--gold); color: var(--ink); box-shadow: 0 8px 20px rgba(232,184,75,.3); }
-  .btn-gold:hover { background: #f0cc76; transform: translateY(-2px); }
-  .btn-outline-ink { background: transparent; color: var(--ink); border: 1.5px solid var(--line-onwhite); }
-  .btn-outline-ink:hover { border-color: var(--gold-deep); color: var(--gold-deep); }
-  .btn-block { width: 100%; }
 
   .hero { background: linear-gradient(160deg, var(--ink) 0%, #101022 100%); color: #fff; padding: 4rem 0 3.5rem; text-align: center; }
   .hero-kicker { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 11.5px; font-weight: 500; letter-spacing: .6px; color: var(--gold); background: rgba(232,184,75,0.12); padding: 7px 16px 7px 12px; border-radius: 999px; margin-bottom: 1.6rem; border: 1px solid rgba(232,184,75,.25); }
   .hero h1 { font-family: var(--font-display); font-size: clamp(28px, 4vw, 44px); font-weight: 700; max-width: 760px; margin: 0 auto 1.1rem; line-height: 1.18; letter-spacing: -.5px; }
   .hero h1 em { font-style: normal; color: var(--gold); }
   .hero-sub { font-size: 16.5px; color: rgba(255,255,255,0.75); max-width: 600px; margin: 0 auto; }
-
-  section { padding: 4.5rem 0; }
   .produtos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.6rem; max-width: 980px; margin: 0 auto; }
 
   .produto-card {
@@ -147,16 +95,6 @@
   .cta-servicos { background: var(--paper); text-align: center; }
   .cta-servicos h2 { font-family: var(--font-display); font-size: clamp(21px, 2.6vw, 27px); font-weight: 700; color: var(--ink); margin-bottom: .8rem; }
   .cta-servicos p { font-size: 15.5px; color: var(--text-soft); max-width: 560px; margin: 0 auto 1.8rem; }
-
-  footer { background: #101022; color: rgba(255,255,255,0.5); padding: 2.5rem 0; font-size: 12.5px; }
-  footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
-  footer .brand-mark img { height: 24px; }
-  footer a:hover { color: var(--gold); }
-  .footer-links { display: flex; gap: 1.3rem; flex-wrap: wrap; }
-
-  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
-  .reveal.visible { opacity: 1; transform: none; }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .reveal { opacity: 1; transform: none; transition: none; } }
 
   @media (max-width: 800px) {
     header nav { display: none; }
@@ -361,6 +299,7 @@
       <a href="../#sobre">Sobre</a>
       <a href="../#contato">Contato</a>
       <a href="https://www.linkedin.com/company/orbeex/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/orbeex_/" target="_blank" rel="noopener">Instagram</a>
       <a href="../privacidade/">Privacidade</a>
       <a href="../termos/">Termos de Uso</a>
       <a href="#" data-consent-refazer>Cookies</a>

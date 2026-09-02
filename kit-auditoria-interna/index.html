@@ -27,7 +27,7 @@
 <link rel="apple-touch-icon" href="../img/simbolo-x.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="/css/orbeex-captura.css">
 <link rel="stylesheet" href="/css/orbeex-depoimentos.css">
@@ -75,7 +75,7 @@
     {
       "@type": "Question",
       "name": "Como recebo o material depois de comprar?",
-      "acceptedAnswer": { "@type": "Answer", "text": "A venda está pausada enquanto o kit é atualizado para a ISO 9001:2026, publicada em 16 de setembro de 2026. Quando reabrir, o acesso é imediato: com o pagamento aprovado, os 12 arquivos (8 do kit mais 4 bônus) ficam disponíveis pra download na área de membros." }
+      "acceptedAnswer": { "@type": "Answer", "text": "A venda está pausada enquanto o kit é atualizado para a ISO 9001:2026, com publicação prevista para 16 de setembro de 2026. Quando reabrir, o acesso é imediato: com o pagamento aprovado, os 12 arquivos (8 do kit mais 4 bônus) ficam disponíveis pra download na área de membros." }
     },
     {
       "@type": "Question",
@@ -91,65 +91,8 @@
 }
 </script>
 
+<link rel="stylesheet" href="/css/orbeex-base.css">
 <style>
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-  :root {
-    --navy: #252538;
-    --navy-dark: #1a1a2e;
-    --navy-mid: #2e2e48;
-    --gold: #E8B84B;
-    --gold-dark: #b3872b;
-    --gold-light: #f0cc76;
-    --gold-bg: #fdf6e3;
-    --bg-light: #f4f4f8;
-    --bg-white: #ffffff;
-    --text-primary: #1a1a2e;
-    --text-secondary: #5c5c78;
-    --text-muted: #8a8aa3;
-    --border: #e2e2ee;
-    --radius: 14px;
-    --shadow-sm: 0 1px 2px rgba(37,37,56,.06), 0 4px 12px rgba(37,37,56,.05);
-    --shadow-md: 0 12px 32px rgba(37,37,56,.10);
-    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-    --maxw: 1080px;
-  }
-
-  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-  body {
-    font-family: var(--font-sans); color: var(--text-primary); line-height: 1.6;
-    background: var(--bg-white); -webkit-font-smoothing: antialiased;
-  }
-  a { text-decoration: none; color: inherit; }
-  img { max-width: 100%; }
-  ul { list-style: none; }
-  :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
-
-  .container { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
-  .hex { clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); }
-
-  header {
-    position: sticky; top: 0; z-index: 100;
-    background: rgba(255,255,255,0.94); backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border);
-  }
-  header .container { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 1rem; }
-  .brand-mark img { height: 30px; width: auto; display: block; }
-  .nav-cta {
-    background: var(--navy); color: #fff !important; padding: 10px 20px;
-    border-radius: 8px; font-weight: 700; font-size: 14.5px; transition: background .18s;
-  }
-  .nav-cta:hover { background: var(--navy-mid); }
-
-  .btn {
-    display: inline-flex; align-items: center; justify-content: center; gap: 9px;
-    padding: 16px 32px; border-radius: 10px; font-weight: 700; font-size: 16px;
-    transition: transform .18s, background .18s, box-shadow .18s;
-    border: none; cursor: pointer; font-family: inherit; text-align: center;
-  }
-  .btn-gold { background: var(--gold); color: var(--navy); box-shadow: 0 8px 22px rgba(232,184,75,.32); }
-  .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
-  .btn-block { width: 100%; }
 
   /* HERO */
   .hero {
@@ -221,15 +164,11 @@
     .hero-inner { flex-direction: column; gap: 2.6rem; }
     .stack-wrap { order: -1; }
   }
-
-  section { padding: 4.5rem 0; }
   .section-head { max-width: 640px; margin: 0 auto 2.6rem; text-align: center; }
   .section-kicker {
     font-size: 11.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
     color: var(--gold-dark); margin-bottom: 0.7rem;
   }
-  .section-title { font-size: clamp(23px, 3vw, 32px); font-weight: 800; color: var(--navy); margin-bottom: .8rem; line-height: 1.25; }
-  .section-lede { font-size: 16px; color: var(--text-secondary); }
 
   /* PROBLEMAS */
   .problemas { background: var(--bg-light); }
@@ -312,39 +251,23 @@
 
   /* FAQ */
   .faq-list { max-width: 760px; margin: 0 auto; }
-  .faq-item { border-bottom: 1px solid var(--border); }
-  .faq-item summary {
-    cursor: pointer; padding: 1.2rem 2.4rem 1.2rem 0; font-weight: 600; font-size: 15.5px;
-    color: var(--navy); list-style: none; position: relative;
-  }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after {
-    content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%);
-    font-size: 22px; font-weight: 400; color: var(--gold-dark); line-height: 1;
-  }
-  .faq-item[open] summary::after { content: "−"; }
-  .faq-item p { padding: 0 2.4rem 1.3rem 0; font-size: 14.5px; color: var(--text-secondary); }
 
   /* CTA FINAL */
   .cta-final { text-align: center; }
   .cta-final p { color: var(--text-secondary); font-size: 15px; margin-top: 1rem; }
 
-  footer { background: var(--navy-dark); color: rgba(255,255,255,0.5); padding: 2.2rem 0; font-size: 12.5px; }
-  footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
-  footer .brand-mark img { height: 22px; }
-  footer a:hover { color: var(--gold); }
-
-  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
-  .reveal.visible { opacity: 1; transform: none; }
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    .reveal { opacity: 1; transform: none; transition: none; }
-  }
-
   @media (max-width: 640px) {
     section { padding: 3.2rem 0; }
     .autoria-card, .preco-card { padding: 1.6rem 1.4rem; }
     .conteudo-item { flex-direction: column; }
+  }
+
+  /* ===== TIPOGRAFIA DA MARCA (OB-03) =====
+     Estes seletores existem so para alinhar as paginas de venda ao resto
+     do site. O tamanho e o peso continuam sendo os desta pagina. */
+  .hero h1, .preco-valor, .stack-card strong { font-family: var(--font-display); letter-spacing: -.3px; }
+  .hero-kicker, .section-kicker, .stack-tag, .preco-label {
+    font-family: var(--font-mono); font-weight: 600; letter-spacing: .8px; text-transform: uppercase;
   }
 </style>
 </head>
@@ -644,7 +567,7 @@
       </details>
       <details class="faq-item">
         <summary>Como recebo o material depois de comprar?</summary>
-        <p>A venda está pausada enquanto o kit é atualizado para a ISO 9001:2026, publicada em 16 de setembro de 2026. Quando reabrir, o acesso é imediato: com o pagamento aprovado, os 12 arquivos (8 do kit mais 4 bônus) ficam disponíveis pra download na área de membros.</p>
+        <p>A venda está pausada enquanto o kit é atualizado para a ISO 9001:2026, com publicação prevista para 16 de setembro de 2026. Quando reabrir, o acesso é imediato: com o pagamento aprovado, os 12 arquivos (8 do kit mais 4 bônus) ficam disponíveis pra download na área de membros.</p>
       </details>
       <details class="faq-item">
         <summary>Preciso de algum software especial?</summary>
@@ -657,6 +580,25 @@
     </div>
   </div>
 </section>
+<!-- ===== TAMBÉM DA ORBEEX (venda cruzada) ===== -->
+<section class="tambem reveal">
+  <div class="container">
+    <div class="tambem-inner">
+      <p class="tambem-rotulo">Também da ORBEEX</p>
+      <div class="tambem-card">
+        <div class="tambem-hex hex" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9M14 17H5M17 4l3 3-3 3M7 14l-3 3 3 3"/></svg></div>
+        <div class="tambem-txt">
+          <h3>Fornecedor Sob Controle — Requisito 8.4</h3>
+          <p>Mapeamento de criticidade, avaliação ponderada e tratamento de não conformidade de fornecedores. O requisito que a auditoria interna sempre encosta e quase nunca tem evidência pronta.</p>
+        </div>
+        <a href="../fornecedor-sob-controle/#comprar" class="btn btn-outline-ink" data-track="ver_produto" data-track-item="fornecedor-sob-controle">
+          Entrar na lista <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- ===== CTA FINAL ===== -->
 <section class="cta-final reveal">
@@ -684,7 +626,9 @@
     <div>ORBEEX Assessoria em Sistemas de Gestão LTDA · CNPJ 49.759.143/0001-70 · Bento Gonçalves/RS ·
       <a href="../privacidade/" style="color:inherit; text-decoration:underline;">Privacidade</a> ·
       <a href="../termos/" style="color:inherit; text-decoration:underline;">Termos de Uso</a> ·
-      <a href="#" data-consent-refazer style="color:inherit; text-decoration:underline;">Preferências de cookies</a></div>
+      <a href="#" data-consent-refazer style="color:inherit; text-decoration:underline;">Preferências de cookies</a> ·
+      <a href="https://www.linkedin.com/company/orbeex/" target="_blank" rel="noopener" style="color:inherit; text-decoration:underline;">LinkedIn</a> ·
+      <a href="https://www.instagram.com/orbeex_/" target="_blank" rel="noopener" style="color:inherit; text-decoration:underline;">Instagram</a></div>
   </div>
 </footer>
 

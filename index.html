@@ -112,77 +112,14 @@
 }
 </script>
 
+<link rel="stylesheet" href="/css/orbeex-base.css">
 <style>
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-  :root {
-    --ink: #15152a;
-    --ink-2: #1e1e3a;
-    --ink-3: #29294a;
-    --gold: #e8b84b;
-    --gold-deep: #b3872b;
-    --gold-soft: rgba(232,184,75,.14);
-    --paper: #faf8f2;
-    --paper-2: #f2efe3;
-    --white: #ffffff;
-    --text: #1a1a2e;
-    --text-soft: #5c5c78;
-    --text-faint: #8b8ba3;
-    --line: #e7e2d4;
-    --line-onwhite: #e5e2ee;
-    --radius: 16px;
-    --radius-sm: 10px;
-    --shadow-sm: 0 1px 2px rgba(21,21,42,.06), 0 6px 16px rgba(21,21,42,.05);
-    --shadow-md: 0 16px 40px rgba(21,21,42,.12);
-    --font-display: 'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-    --font-mono: 'IBM Plex Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
-    --maxw: 1180px;
-  }
-
-  html { scroll-behavior: smooth; scroll-padding-top: 84px; -webkit-text-size-adjust: 100%; }
-  body {
-    font-family: var(--font-sans); color: var(--text); line-height: 1.6;
-    background: var(--white); -webkit-font-smoothing: antialiased;
-  }
-  a { text-decoration: none; color: inherit; }
-  img { max-width: 100%; }
-  ul { list-style: none; }
-  :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
-
-  .container { max-width: var(--maxw); margin: 0 auto; padding: 0 1.5rem; }
-  .hex { clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); }
-  .mono-tag {
-    font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: .5px;
-    color: var(--gold-deep); text-transform: uppercase;
-  }
-
-  .skip-link {
-    position: absolute; left: -9999px; top: 0; z-index: 999;
-    background: var(--gold); color: var(--ink); padding: 12px 20px; font-weight: 700; border-radius: 0 0 8px 0;
-  }
-  .skip-link:focus { left: 0; }
 
   /* ===== HEADER ===== */
   header {
     position: sticky; top: 0; z-index: 100;
     background: rgba(250,248,242,0.88); backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--line);
-  }
-  header .container { display: flex; align-items: center; justify-content: space-between; height: 74px; gap: 1rem; }
-  .brand-mark { display: flex; align-items: center; flex-shrink: 0; }
-  .brand-mark img { height: 32px; width: auto; display: block; }
-  header nav { display: flex; align-items: center; gap: 1.6rem; }
-  header nav a { color: var(--text-soft); font-size: 14.5px; font-weight: 500; transition: color .15s; white-space: nowrap; }
-  header nav a:hover { color: var(--ink); }
-  .nav-cta {
-    background: var(--ink); color: #fff !important; padding: 10px 20px;
-    border-radius: 8px; font-weight: 600 !important; transition: background .18s, transform .18s;
-  }
-  .nav-cta:hover { background: var(--ink-3); transform: translateY(-1px); }
-  .nav-toggle {
-    display: none; background: none; border: 1px solid var(--line); border-radius: 8px;
-    color: var(--ink); cursor: pointer; width: 42px; height: 42px; align-items: center; justify-content: center;
   }
 
   /* ===== BOTÕES ===== */
@@ -192,15 +129,6 @@
     transition: transform .18s, background .18s, border-color .18s, color .18s;
     border: none; cursor: pointer; font-family: inherit; text-align: center;
   }
-  .btn svg { flex-shrink: 0; }
-  .btn-gold { background: var(--gold); color: var(--ink); box-shadow: 0 8px 20px rgba(232,184,75,.3); }
-  .btn-gold:hover { background: #f0cc76; transform: translateY(-2px); }
-  .btn-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.35); }
-  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-  .btn-outline-ink { background: transparent; color: var(--ink); border: 1.5px solid var(--line-onwhite); }
-  .btn-outline-ink:hover { border-color: var(--gold-deep); color: var(--gold-deep); }
-  .btn-navy { background: var(--ink); color: #fff; }
-  .btn-navy:hover { background: var(--ink-3); transform: translateY(-2px); }
 
   /* ===== TEXTURA HEXAGONAL AMBIENTE ===== */
   .hex-field { position: relative; isolation: isolate; }
@@ -282,8 +210,6 @@
   }
   .section-head.center .section-kicker { justify-content: center; }
   .section-kicker::before { content: ""; width: 9px; height: 8px; background: var(--gold); clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); flex-shrink: 0; }
-  .section-title { font-family: var(--font-display); font-size: clamp(24px, 3vw, 34px); font-weight: 700; color: var(--ink); margin-bottom: 1rem; line-height: 1.24; letter-spacing: -.3px; }
-  .section-lede { font-size: 16.5px; color: var(--text-soft); }
 
   /* ===== PROBLEMAS ===== */
   .problemas { background: var(--paper); }
@@ -428,19 +354,7 @@
 
   /* ===== FAQ ===== */
   .faq-list { max-width: 800px; margin: 0 auto; }
-  .faq-item { border-bottom: 1px solid var(--line-onwhite); }
-  .faq-item summary {
-    cursor: pointer; padding: 1.3rem 2.5rem 1.3rem 0; font-weight: 600; font-size: 16px;
-    color: var(--ink); list-style: none; position: relative; transition: color .15s;
-  }
-  .faq-item summary::-webkit-details-marker { display: none; }
   .faq-item summary:hover { color: var(--gold-deep); }
-  .faq-item summary::after {
-    content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%);
-    font-size: 24px; font-weight: 400; color: var(--gold-deep); line-height: 1;
-  }
-  .faq-item[open] summary::after { content: "−"; }
-  .faq-item p { padding: 0 2.5rem 1.4rem 0; font-size: 15px; color: var(--text-soft); }
 
   /* ===== CONTATO ===== */
   .contato { background: linear-gradient(160deg, var(--ink) 0%, #101022 100%); color: #fff; }
@@ -499,17 +413,12 @@
 
   /* ===== FOOTER ===== */
   footer { background: #101022; color: rgba(255,255,255,0.5); padding: 2.5rem 0; font-size: 12.5px; }
-  footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
-  footer .brand-mark img { height: 24px; }
-  footer a:hover { color: var(--gold); }
-  .footer-links { display: flex; gap: 1.3rem; flex-wrap: wrap; }
 
   /* ===== CTA DE SEÇÃO ===== */
   .section-cta { text-align: center; margin-top: 2.6rem; }
 
   /* ===== REVELAÇÃO SUAVE ===== */
   .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
-  .reveal.visible { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .reveal { opacity: 1; transform: none; transition: none; }
@@ -1270,6 +1179,7 @@
       <a href="#faq">Dúvidas</a>
       <a href="produtos/">Produtos</a>
       <a href="https://www.linkedin.com/company/orbeex/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/orbeex_/" target="_blank" rel="noopener">Instagram</a>
       <a href="mailto:luana.civardi@orbeex.com.br">E-mail</a>
       <a href="privacidade/">Privacidade</a>
       <a href="termos/">Termos de Uso</a>

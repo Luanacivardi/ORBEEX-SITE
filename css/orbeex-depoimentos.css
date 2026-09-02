@@ -90,43 +90,35 @@
   color: var(--oxp-text);
   flex: 1;
 }
-.ox-dep footer {
+/* Assinatura discreta, logo abaixo da citação.
+   Usa <div> e não <footer> de propósito: todas as páginas do site têm uma
+   regra global `footer { background: navy; color: branco }` que pintava
+   este bloco e deixava o nome escuro sobre escuro. As propriedades abaixo
+   são declaradas explicitamente para não depender de herança. */
+.ox-dep .ox-assina {
+  background: none;
+  border: 0;
   border-top: 1px solid var(--oxp-line);
-  padding-top: 15px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  border-radius: 0;
+  padding: 14px 0 0;
+  margin: 0;
 }
-.ox-dep .ox-inicial {
-  flex: 0 0 auto;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--oxp-ink);
-  color: var(--oxp-gold);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display, sans-serif);
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: .02em;
-}
-.ox-dep .ox-quem { min-width: 0; }
 .ox-dep .ox-nome {
   display: block;
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--oxp-ink);
-  line-height: 1.3;
+  line-height: 1.35;
 }
 .ox-dep .ox-cargo {
   display: block;
+  margin-top: 2px;
   font-size: 12.5px;
+  font-weight: 400;
   color: var(--oxp-soft);
-  line-height: 1.4;
+  line-height: 1.45;
 }
-.ox-dep .ox-empresa { color: var(--oxp-gold-deep); font-weight: 600; }
+.ox-dep .ox-empresa { color: var(--oxp-soft); font-weight: 600; }
 
 /* depoimento curto: vira um destaque de resultado em vez de citação longa */
 .ox-dep.ox-curto blockquote {
@@ -160,10 +152,10 @@
 
 .ox-prova.ox-prova-escura .ox-dep { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.12); }
 .ox-prova.ox-prova-escura .ox-dep blockquote { color: rgba(255,255,255,.86); }
-.ox-prova.ox-prova-escura .ox-dep footer { border-top-color: rgba(255,255,255,.12); }
+.ox-prova.ox-prova-escura .ox-dep .ox-assina { border-top-color: rgba(255,255,255,.12); }
 .ox-prova.ox-prova-escura .ox-dep .ox-nome { color: #fff; }
-.ox-prova.ox-prova-escura .ox-dep .ox-cargo { color: rgba(255,255,255,.6); }
-.ox-prova.ox-prova-escura .ox-dep .ox-inicial { background: var(--oxp-gold); color: var(--oxp-ink); }
+.ox-prova.ox-prova-escura .ox-dep .ox-cargo,
+.ox-prova.ox-prova-escura .ox-dep .ox-empresa { color: rgba(255,255,255,.6); }
 .ox-prova.ox-prova-escura .ox-dep.ox-curto blockquote { color: #fff; }
 .ox-prova.ox-prova-escura .ox-prova-numeros div { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.12); }
 .ox-prova.ox-prova-escura .ox-prova-numeros b { color: #fff; }

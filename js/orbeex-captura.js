@@ -64,9 +64,9 @@
       destinoRotulo: 'Ver os produtos disponíveis'
     },
     'espera-kit': {
-      kicker: 'Lista de lançamento',
+      kicker: 'Lançamento em breve',
       titulo: 'O Kit de Auditoria Interna está sendo atualizado para a ISO 9001:2026',
-      sub: 'A nova edição da norma é publicada em 16 de setembro de 2026. Em vez de vender agora um material construído sobre a edição anterior, prefiro atualizar o kit e reabrir depois — com a versão marcada de forma explícita. Quem entrar na lista é avisado primeiro.',
+      sub: 'A nova edição da norma é publicada em 16 de setembro de 2026. Em vez de vender agora um material construído sobre a edição anterior, prefiro atualizar o kit e reabrir depois — com a versão marcada de forma explícita. O material atualizado será lançado em breve, e quem entrar na lista é avisado primeiro.',
       itens: [
         'Aviso antes de reabrir para o público geral',
         'Condição de lançamento reservada para a lista',
@@ -82,9 +82,9 @@
       destinoRotulo: 'Ler o guia gratuito'
     },
     'espera-fornecedor': {
-      kicker: 'Lista de lançamento',
+      kicker: 'Lançamento em breve',
       titulo: 'O Fornecedor Sob Controle está sendo revisado para a ISO 9001:2026',
-      sub: 'A nova edição da norma é publicada em 16 de setembro de 2026. Antes de voltar a vender, quero conferir o que muda no Requisito 8.4 e marcar a versão de forma explícita no material. Quem entrar na lista é avisado primeiro.',
+      sub: 'A nova edição da norma é publicada em 16 de setembro de 2026. Antes de voltar a vender, quero conferir o que muda no Requisito 8.4 e marcar a versão de forma explícita no material. O material revisado será lançado em breve, e quem entrar na lista é avisado primeiro.',
       itens: [
         'Aviso antes de reabrir para o público geral',
         'Condição de lançamento reservada para a lista',

@@ -1,0 +1,177 @@
+/* =========================================================================
+   Prova social da ORBEEX — depoimentos de clientes da assessoria
+   Usado na home, na página de produtos e nas duas páginas de venda.
+
+   Todos os depoimentos foram coletados por formulário com autorização
+   expressa de publicação. Nome, empresa e cargo aparecem porque foram
+   autorizados; o e-mail de contato NUNCA vai para o site.
+
+   Os tokens (--ink, --gold...) vêm da página que inclui este arquivo.
+   ========================================================================= */
+
+.ox-prova {
+  --oxp-ink: var(--ink, var(--navy, #15152a));
+  --oxp-gold: var(--gold, #e8b84b);
+  --oxp-gold-deep: var(--gold-deep, var(--gold-dark, #b3872b));
+  --oxp-line: var(--line, var(--line-onwhite, #e7e2d4));
+  --oxp-paper: var(--paper, #faf8f2);
+  --oxp-text: var(--text, #1a1a2e);
+  --oxp-soft: var(--text-soft, #5c5c78);
+  --oxp-faint: var(--text-faint, #8b8ba3);
+}
+
+.ox-prova *, .ox-prova *::before, .ox-prova *::after { box-sizing: border-box; }
+
+/* ---------- faixa de números ---------- */
+
+.ox-prova-numeros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 2.4rem;
+}
+.ox-prova-numeros div {
+  background: var(--oxp-paper);
+  border: 1px solid var(--oxp-line);
+  border-radius: 12px;
+  padding: 14px 22px;
+  text-align: center;
+  min-width: 152px;
+}
+.ox-prova-numeros b {
+  font-family: var(--font-display, sans-serif);
+  display: block;
+  font-size: 27px;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  color: var(--oxp-ink);
+  line-height: 1.1;
+  margin-bottom: 3px;
+}
+.ox-prova-numeros span {
+  font-family: var(--font-mono, monospace);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--oxp-faint);
+}
+
+/* ---------- grade de depoimentos ---------- */
+
+.ox-prova-grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+.ox-dep {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--oxp-line);
+  border-radius: 16px;
+  padding: 26px 28px;
+}
+.ox-dep .ox-aspas {
+  color: var(--oxp-gold);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 46px;
+  line-height: .8;
+  height: 22px;
+  margin-bottom: 14px;
+}
+.ox-dep blockquote {
+  margin: 0 0 20px;
+  font-size: 15.5px;
+  line-height: 1.62;
+  color: var(--oxp-text);
+  flex: 1;
+}
+.ox-dep footer {
+  border-top: 1px solid var(--oxp-line);
+  padding-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.ox-dep .ox-inicial {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--oxp-ink);
+  color: var(--oxp-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display, sans-serif);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+.ox-dep .ox-quem { min-width: 0; }
+.ox-dep .ox-nome {
+  display: block;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--oxp-ink);
+  line-height: 1.3;
+}
+.ox-dep .ox-cargo {
+  display: block;
+  font-size: 12.5px;
+  color: var(--oxp-soft);
+  line-height: 1.4;
+}
+.ox-dep .ox-empresa { color: var(--oxp-gold-deep); font-weight: 600; }
+
+/* depoimento curto: vira um destaque de resultado em vez de citação longa */
+.ox-dep.ox-curto blockquote {
+  font-family: var(--font-display, sans-serif);
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.32;
+  letter-spacing: -.01em;
+  color: var(--oxp-ink);
+}
+
+/* ---------- nota de procedência ---------- */
+
+.ox-prova-nota {
+  margin: 1.8rem auto 0;
+  max-width: 640px;
+  text-align: center;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--oxp-faint);
+}
+
+/* ---------- variante compacta (páginas de venda) ---------- */
+
+.ox-prova.ox-prova-compacta .ox-prova-grade { grid-template-columns: repeat(auto-fit, minmax(272px, 1fr)); }
+.ox-prova.ox-prova-compacta .ox-dep { padding: 22px 24px; border-radius: 14px; }
+.ox-prova.ox-prova-compacta .ox-dep blockquote { font-size: 14.5px; margin-bottom: 16px; }
+.ox-prova.ox-prova-compacta .ox-numeros { margin-bottom: 1.8rem; }
+
+/* ---------- em fundo escuro ---------- */
+
+.ox-prova.ox-prova-escura .ox-dep { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.12); }
+.ox-prova.ox-prova-escura .ox-dep blockquote { color: rgba(255,255,255,.86); }
+.ox-prova.ox-prova-escura .ox-dep footer { border-top-color: rgba(255,255,255,.12); }
+.ox-prova.ox-prova-escura .ox-dep .ox-nome { color: #fff; }
+.ox-prova.ox-prova-escura .ox-dep .ox-cargo { color: rgba(255,255,255,.6); }
+.ox-prova.ox-prova-escura .ox-dep .ox-inicial { background: var(--oxp-gold); color: var(--oxp-ink); }
+.ox-prova.ox-prova-escura .ox-dep.ox-curto blockquote { color: #fff; }
+.ox-prova.ox-prova-escura .ox-prova-numeros div { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.12); }
+.ox-prova.ox-prova-escura .ox-prova-numeros b { color: #fff; }
+.ox-prova.ox-prova-escura .ox-prova-numeros span { color: rgba(255,255,255,.5); }
+.ox-prova.ox-prova-escura .ox-prova-nota { color: rgba(255,255,255,.45); }
+
+@media (max-width: 560px) {
+  .ox-dep { padding: 22px 22px; }
+  .ox-prova-numeros div { min-width: 132px; padding: 12px 16px; }
+  .ox-prova-numeros b { font-size: 23px; }
+}

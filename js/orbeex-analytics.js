@@ -1,14 +1,16 @@
-/* ORBEEX · Medição e consentimento
+/* ORBEEX · Medição, anúncios e consentimento
  * ---------------------------------------------------------------------------
- * Um arquivo só, usado pelas 4 páginas do site. Faz três coisas:
+ * Um arquivo só, usado pelas páginas do site. Faz quatro coisas:
  *   1. Carrega o Google Analytics 4 com Consent Mode (cookie só depois do "aceitar")
- *   2. Mostra o banner de consentimento e guarda a escolha da pessoa
- *   3. Dispara eventos nos elementos marcados com data-track
+ *   2. Carrega o Meta Pixel (Facebook/Instagram Ads), também só depois do "aceitar"
+ *   3. Mostra o banner de consentimento e guarda a escolha da pessoa
+ *   4. Dispara eventos nos elementos marcados com data-track
  *
- * PARA ATIVAR: troque MEASUREMENT_ID abaixo pelo ID da propriedade GA4
+ * PARA ATIVAR O GA4: troque MEASUREMENT_ID abaixo pelo ID da propriedade
  * (formato G-XXXXXXXXXX, em Administrar > Fluxos de dados no painel do GA4).
- * Enquanto o valor for o placeholder, nada é carregado — o site funciona
- * normalmente, só não mede.
+ * PARA ATIVAR O PIXEL: troque PIXEL_ID pelo ID do Pixel (Gerenciador de Eventos
+ * da Meta). Enquanto os valores forem os placeholders, nada é carregado — o
+ * site funciona normalmente, só não mede/anuncia.
  * ------------------------------------------------------------------------- */
 
 (function () {
@@ -17,9 +19,13 @@
   var MEASUREMENT_ID = 'G-WP1CM0PVEK';
   var PLACEHOLDER = 'G-XXXXXXXXXX';
 
+  var PIXEL_ID = '3606285859527015';
+  var PIXEL_PLACEHOLDER = '0000000000000000';
+
   var CHAVE = 'orbeex_consentimento';
   var VERSAO = 1;
   var ativo = MEASUREMENT_ID !== PLACEHOLDER && /^G-[A-Z0-9]{6,}$/.test(MEASUREMENT_ID);
+  var pixelAtivo = PIXEL_ID !== PIXEL_PLACEHOLDER && /^\d{10,}$/.test(PIXEL_ID);
 
   /* ---------- base do gtag ---------------------------------------------- */
 
@@ -66,8 +72,35 @@
 
   function aplicarConsentimento(escolha) {
     gtag('consent', 'update', {
-      analytics_storage: escolha === 'aceito' ? 'granted' : 'denied'
+      analytics_storage: escolha === 'aceito' ? 'granted' : 'denied',
+      ad_storage: escolha === 'aceito' ? 'granted' : 'denied',
+      ad_user_data: escolha === 'aceito' ? 'granted' : 'denied',
+      ad_personalization: escolha === 'aceito' ? 'granted' : 'denied'
     });
+    if (escolha === 'aceito') carregarPixel();
+  }
+
+  /* ---------- carregamento do Meta Pixel ---------------------------------- */
+
+  var pixelCarregado = false;
+
+  function carregarPixel() {
+    if (!pixelAtivo || pixelCarregado) return;
+    pixelCarregado = true;
+
+    /* eslint-disable */
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    /* eslint-enable */
+
+    window.fbq('init', PIXEL_ID);
+    window.fbq('track', 'PageView');
   }
 
   /* ---------- carregamento do GA4 ---------------------------------------- */
@@ -98,6 +131,13 @@
   function orbeexEvento(nome, params) {
     if (!nome) return;
     gtag('event', nome, params || {});
+    if (window.fbq && nome === 'clique_checkout') {
+      window.fbq('track', 'InitiateCheckout', {
+        content_name: (params && params.item) || '',
+        value: params && params.value,
+        currency: (params && params.value) ? 'BRL' : undefined
+      });
+    }
   }
   window.orbeexEvento = orbeexEvento;
 
@@ -165,9 +205,9 @@
     barra.setAttribute('aria-label', 'Aviso de cookies');
     barra.innerHTML =
       '<div class="ox-consent-in">' +
-        '<p class="ox-consent-txt"><b>Este site usa cookies para medir audiência.</b> ' +
-        'Só para eu saber quantas pessoas visitam e quais páginas são lidas — nada é usado ' +
-        'para anúncio. Recusar não atrapalha a navegação. ' +
+        '<p class="ox-consent-txt"><b>Este site usa cookies para medir audiência e anúncios.</b> ' +
+        'Uso pra saber quantas pessoas visitam, quais páginas são lidas e pra mostrar meus ' +
+        'anúncios pra quem já conhece o site. Recusar não atrapalha a navegação. ' +
         '<a href="' + caminhoPrivacidade() + '">Política de Privacidade</a>.</p>' +
         '<div class="ox-consent-btns">' +
           '<button type="button" class="ox-nao">Recusar</button>' +

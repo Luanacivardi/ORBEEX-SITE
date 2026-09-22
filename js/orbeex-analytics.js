@@ -1,16 +1,19 @@
 /* ORBEEX · Medição, anúncios e consentimento
  * ---------------------------------------------------------------------------
- * Um arquivo só, usado pelas páginas do site. Faz quatro coisas:
+ * Um arquivo só, usado pelas páginas do site. Faz cinco coisas:
  *   1. Carrega o Google Analytics 4 com Consent Mode (cookie só depois do "aceitar")
  *   2. Carrega o Meta Pixel (Facebook/Instagram Ads), também só depois do "aceitar"
- *   3. Mostra o banner de consentimento e guarda a escolha da pessoa
- *   4. Dispara eventos nos elementos marcados com data-track
+ *   3. Carrega o Microsoft Clarity (heatmap/gravação de sessão), idem
+ *   4. Mostra o banner de consentimento e guarda a escolha da pessoa
+ *   5. Dispara eventos nos elementos marcados com data-track
  *
  * PARA ATIVAR O GA4: troque MEASUREMENT_ID abaixo pelo ID da propriedade
  * (formato G-XXXXXXXXXX, em Administrar > Fluxos de dados no painel do GA4).
  * PARA ATIVAR O PIXEL: troque PIXEL_ID pelo ID do Pixel (Gerenciador de Eventos
- * da Meta). Enquanto os valores forem os placeholders, nada é carregado — o
- * site funciona normalmente, só não mede/anuncia.
+ * da Meta). PARA ATIVAR O CLARITY: troque CLARITY_ID pelo Project ID (painel
+ * do Clarity > Configurações > Código de acompanhamento). Enquanto os valores
+ * forem os placeholders, nada é carregado — o site funciona normalmente, só
+ * não mede/anuncia.
  * ------------------------------------------------------------------------- */
 
 (function () {
@@ -22,10 +25,14 @@
   var PIXEL_ID = '3606285859527015';
   var PIXEL_PLACEHOLDER = '0000000000000000';
 
+  var CLARITY_ID = 'ymb7snbdk4';
+  var CLARITY_PLACEHOLDER = 'xxxxxxxxxx';
+
   var CHAVE = 'orbeex_consentimento';
   var VERSAO = 1;
   var ativo = MEASUREMENT_ID !== PLACEHOLDER && /^G-[A-Z0-9]{6,}$/.test(MEASUREMENT_ID);
   var pixelAtivo = PIXEL_ID !== PIXEL_PLACEHOLDER && /^\d{10,}$/.test(PIXEL_ID);
+  var clarityAtivo = CLARITY_ID !== CLARITY_PLACEHOLDER && /^[a-z0-9]{6,}$/i.test(CLARITY_ID);
 
   /* ---------- base do gtag ---------------------------------------------- */
 
@@ -77,7 +84,10 @@
       ad_user_data: escolha === 'aceito' ? 'granted' : 'denied',
       ad_personalization: escolha === 'aceito' ? 'granted' : 'denied'
     });
-    if (escolha === 'aceito') carregarPixel();
+    if (escolha === 'aceito') {
+      carregarPixel();
+      carregarClarity();
+    }
   }
 
   /* ---------- carregamento do Meta Pixel ---------------------------------- */
@@ -101,6 +111,23 @@
 
     window.fbq('init', PIXEL_ID);
     window.fbq('track', 'PageView');
+  }
+
+  /* ---------- carregamento do Microsoft Clarity --------------------------- */
+
+  var clarityCarregado = false;
+
+  function carregarClarity() {
+    if (!clarityAtivo || clarityCarregado) return;
+    clarityCarregado = true;
+
+    /* eslint-disable */
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", CLARITY_ID);
+    /* eslint-enable */
   }
 
   /* ---------- carregamento do GA4 ---------------------------------------- */
@@ -206,8 +233,8 @@
     barra.innerHTML =
       '<div class="ox-consent-in">' +
         '<p class="ox-consent-txt"><b>Este site usa cookies para medir audiência e anúncios.</b> ' +
-        'Uso pra saber quantas pessoas visitam, quais páginas são lidas e pra mostrar meus ' +
-        'anúncios pra quem já conhece o site. Recusar não atrapalha a navegação. ' +
+        'Uso pra saber quantas pessoas visitam, quais páginas são lidas, onde clicam, ' +
+        'pra mostrar meus anúncios pra quem já conhece o site. Recusar não atrapalha a navegação. ' +
         '<a href="' + caminhoPrivacidade() + '">Política de Privacidade</a>.</p>' +
         '<div class="ox-consent-btns">' +
           '<button type="button" class="ox-nao">Recusar</button>' +

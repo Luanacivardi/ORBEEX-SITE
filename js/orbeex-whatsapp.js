@@ -18,6 +18,7 @@
   var MENSAGENS = [
     ['/kit-auditoria-interna', 'Oi, Luana! Vim pela página do Kit de Auditoria Interna e queria tirar uma dúvida antes de comprar.'],
     ['/fornecedor-sob-controle', 'Oi, Luana! Vim pela página do Fornecedor Sob Controle e queria tirar uma dúvida antes de comprar.'],
+    ['/plano-de-acao-5-porques', 'Oi, Luana! Vim pela página do Plano de Ação com 5 Porquês e queria tirar uma dúvida antes de comprar.'],
     ['/produtos', 'Oi, Luana! Vi os produtos digitais da ORBEEX no site e queria entender qual faz mais sentido pra minha empresa.'],
     ['/guia/', 'Oi, Luana! Li o guia das 10 não conformidades e queria conversar sobre o sistema de gestão da minha empresa.'],
     ['', 'Oi, Luana! Vim pelo site da ORBEEX e queria entender a assessoria em ISO 9001.']

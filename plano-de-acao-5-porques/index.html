@@ -97,6 +97,9 @@
   .hero-sub { font-size: 16.5px; color: rgba(255,255,255,0.75); max-width: 520px; margin: 0 auto 1.8rem; }
   .hero-preco { font-size: 40px; font-weight: 800; font-family: var(--font-display); color: #fff; margin-bottom: .3rem; }
   .hero-preco span { font-size: 15px; font-weight: 500; color: rgba(255,255,255,.6); }
+  .hero-prova { margin-top: 1.6rem; font-size: 13px; color: rgba(255,255,255,.55); }
+  .hero-prova strong { color: rgba(255,255,255,.85); font-weight: 600; }
+  .hero-prova a { color: var(--gold); text-decoration: underline; text-underline-offset: 2px; white-space: nowrap; }
   .section-kicker { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: .8px; text-transform: uppercase; color: var(--gold-deep); margin-bottom: .6rem; }
 
   .metodo { background: var(--paper); }
@@ -105,6 +108,13 @@
   .metodo-num { width: 32px; height: 32px; flex-shrink: 0; border-radius: 50%; background: var(--ink); color: var(--gold); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; font-family: var(--font-mono); }
   .metodo-step p { font-size: 14.5px; color: var(--text-soft); }
   .metodo-step strong { color: var(--ink); }
+
+  .origem { background: var(--paper); }
+  .origem-card { max-width: 680px; margin: 1.6rem auto 0; background: var(--white); border: 1px solid var(--line-onwhite); border-radius: var(--radius); padding: 2rem 2.2rem; }
+  .origem-aspas { font-family: var(--font-display); font-size: 44px; color: var(--gold); line-height: 1; margin-bottom: .2rem; }
+  .origem-card blockquote { font-size: 15.5px; color: var(--text-soft); line-height: 1.65; margin: 0 0 1.3rem; }
+  .origem-assina { font-size: 14px; color: var(--ink); font-weight: 600; }
+  .origem-assina small { display: block; font-weight: 400; color: var(--text-soft); font-size: 12.5px; margin-top: 2px; }
 
   .inclui-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; max-width: 700px; margin: 1.6rem auto 0; }
   .inclui-card { border: 1px solid var(--line-onwhite); border-radius: var(--radius); padding: 1.5rem; }
@@ -152,6 +162,10 @@
       Quero a planilha agora
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </a>
+    <p class="hero-prova">
+      <strong>Luana Civardi</strong> · consultora da ORBEEX · <strong>9,9/10</strong> em depoimentos de empresas atendidas
+      <a href="https://orbeex.com.br/#depoimentos" target="_blank" rel="noopener">ver depoimentos ↗</a>
+    </p>
   </div>
 </section>
 
@@ -176,6 +190,20 @@
       <div class="metodo-step">
         <div class="metodo-num">4</div>
         <p><strong>Causa raiz encontrada:</strong> agora sim dá pra escrever uma ação corretiva que resolve, não que remenda.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== POR QUE ISSO IMPORTA ===== -->
+<section class="origem reveal">
+  <div class="container">
+    <div class="section-kicker" style="text-align:center;">Por que essa planilha existe</div>
+    <div class="origem-card">
+      <div class="origem-aspas" aria-hidden="true">&ldquo;</div>
+      <blockquote>Eu acredito que tudo fica mais fácil quando usamos ferramentas que já trazem a informação de que precisamos, sem ter que "construir essa evidência do zero". Isso vale pra aquela reunião em que você foi incluída sem aviso prévio, ou pra pergunta do gestor sobre uma ação específica que te obriga a vasculhar mil e-mails. Essa planilha traz praticidade na busca dos dados, dá controle das ações pendentes e reduz o tempo pra saber o que foi executado, o que não foi, e por quê. A resposta fica na ponta da língua — é o controle que a gente precisa no dia a dia pra tomar decisão.</blockquote>
+      <div class="origem-assina">Luana Civardi
+        <small>Consultora em Sistemas de Gestão · ORBEEX</small>
       </div>
     </div>
   </div>

@@ -54,6 +54,7 @@
   "taxID": "49.759.143/0001-70",
   "email": "luana.civardi@orbeex.com.br",
   "founder": { "@type": "Person", "name": "Luana Civardi" },
+  "sameAs": ["https://www.linkedin.com/company/orbeex/", "https://www.instagram.com/orbeex_/"],
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Bento Gonçalves",
@@ -461,6 +462,108 @@
     .metodo-timeline { grid-template-columns: 1fr; }
   }
 </style>
+<style id="ajustes-2026-10">
+  /* ===== PRÉVIA: foto na seção Sobre + chip no hero ===== */
+  .sobre-grid { grid-template-columns: minmax(280px, 380px) 1fr; gap: 4rem; align-items: center; }
+  .sobre-foto { position: relative; margin: 0; }
+  .sobre-foto::before {
+    content: ""; position: absolute; inset: 20px -20px -20px 20px; border-radius: 22px;
+    background: var(--gold-soft); border: 1.5px solid var(--gold); z-index: 0;
+  }
+  .sobre-foto img {
+    position: relative; z-index: 1; display: block; width: 100%; height: auto; aspect-ratio: 4 / 5;
+    object-fit: cover; border-radius: 20px; background: var(--paper); box-shadow: var(--shadow-md);
+  }
+  .sobre-foto figcaption {
+    position: absolute; z-index: 2; left: 16px; bottom: 16px; display: flex; flex-direction: column; gap: 2px;
+    background: rgba(21,21,42,.92); color: #fff; padding: 11px 16px; border-radius: 12px;
+    border-left: 3px solid var(--gold); backdrop-filter: blur(4px);
+  }
+  .sobre-foto figcaption strong { font-family: var(--font-display); font-size: 15px; font-weight: 600; }
+  .sobre-foto figcaption span { font-family: var(--font-mono); font-size: 11px; color: var(--gold); letter-spacing: .3px; }
+  .valores-row {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.8rem;
+    margin-top: 3.4rem; padding-top: 2.4rem; border-top: 1px solid var(--line);
+  }
+  .valores-row .valor-hex { background: var(--gold-soft); }
+
+
+  @media (max-width: 960px) {
+    .sobre-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .sobre-foto { max-width: 340px; margin: 0 auto 0 0; }
+    .valores-row { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .sobre-foto { max-width: 100%; }
+    .sobre-foto::before { inset: 14px -8px -14px 14px; }
+    .valores-row { grid-template-columns: 1fr; }
+  }
+</style>
+<style id="ajustes-2026-10-b">
+
+  /* ===== SERVIÇOS compacto ===== */
+  #servicos { padding: 3rem 0 3.2rem; }
+  #servicos .section-head { max-width: none; margin-bottom: 1.6rem; }
+  #servicos .section-title { font-size: clamp(24px, 2.6vw, 32px); }
+  #servicos .section-lede { font-size: 15px; margin-top: .4rem; }
+  #servicos .servicos-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  #servicos .servico-card { padding: 1.2rem 1.3rem; }
+  #servicos .servico-tag { top: 1.2rem; right: 1.3rem; }
+  #servicos .servico-hex { width: 40px; height: 37px; margin-bottom: .8rem; }
+  #servicos .servico-hex svg { width: 19px; height: 19px; }
+  #servicos .servico-card h3 { font-size: 16px; margin-bottom: 5px; }
+  #servicos .servico-dor { font-size: 12.5px; margin-bottom: 8px; line-height: 1.4; }
+  #servicos .servico-card > p { font-size: 13.5px; margin-bottom: .7rem; line-height: 1.5; }
+  .servico-det { margin-top: auto; border-top: 1px solid var(--line-onwhite); padding-top: .6rem; }
+  .servico-det summary { cursor: pointer; font-size: 12.5px; font-weight: 600; color: var(--gold-deep); list-style: none; }
+  .servico-det summary::-webkit-details-marker { display: none; }
+  .servico-det summary::after { content: " +"; }
+  .servico-det[open] summary::after { content: " –"; }
+  .servico-det .servico-entregas { border-top: 0; padding-top: .7rem; margin-top: 0; }
+  #servicos .section-cta { margin-top: 1.4rem; }
+
+  /* ===== STRATEGYA compacto (cabe numa tela) ===== */
+  #strategya { padding: 3rem 0; }
+  #strategya .section-head { max-width: none; margin-bottom: 0; }
+  #strategya .strategya-badge { margin-bottom: .8rem; }
+  #strategya .section-title { font-size: clamp(24px, 2.6vw, 32px); margin-bottom: .6rem; }
+  #strategya .section-lede { font-size: 15px; max-width: 820px; }
+  #strategya .strategya-modulos { grid-template-columns: repeat(3, 1fr); gap: .9rem; margin: 1.6rem 0; }
+  #strategya .modulo { padding: 1rem 1.15rem; display: grid; grid-template-columns: 28px 1fr; column-gap: 12px; align-items: start; }
+  #strategya .modulo-ico { margin: 2px 0 0; grid-row: 1 / 3; }
+  #strategya .modulo-ico svg { width: 24px; height: 24px; }
+  #strategya .modulo h3 { font-size: 15px; margin-bottom: 3px; }
+  #strategya .modulo p { font-size: 13px; line-height: 1.5; }
+  #strategya .strategya-fecho { padding: 1.1rem 1.5rem; gap: 1.2rem; }
+  #strategya .strategya-fecho p { font-size: 14px; max-width: 600px; }
+  #strategya .btn { padding: 12px 22px; font-size: 14px; }
+
+  @media (max-width: 960px) {
+    #servicos .servicos-grid { grid-template-columns: repeat(2, 1fr); }
+    #strategya .strategya-modulos { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    #servicos .servicos-grid, #strategya .strategya-modulos { grid-template-columns: 1fr; }
+  }
+</style>
+<style id="ajustes-2026-10-c">
+  .orbit-node {
+    border-radius: 18px; gap: 7px; border: 1px solid rgba(232,184,75,.55);
+    background: linear-gradient(150deg, rgba(255,255,255,.13), rgba(255,255,255,.03));
+    box-shadow: 0 12px 30px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.14), 0 0 24px rgba(232,184,75,.08);
+    transition: transform .25s, box-shadow .25s;
+  }
+  .orbit-node .letter {
+    width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(145deg, #f3cd6e, var(--gold-deep)); color: var(--ink); font-size: 20px; font-weight: 700;
+    box-shadow: 0 4px 14px rgba(232,184,75,.35);
+  }
+  .orbit-node .word { margin-top: 0; font-size: 10.5px; font-weight: 600; letter-spacing: 1px; color: rgba(255,255,255,.88); }
+  .orbit-node:hover { box-shadow: 0 14px 34px rgba(0,0,0,.45), 0 0 30px rgba(232,184,75,.28); }
+  .orbit-node.n:hover { transform: translate(-50%,-3px); } .orbit-node.s:hover { transform: translate(-50%,3px); }
+  .orbit-node.e:hover { transform: translate(3px,-50%); } .orbit-node.w:hover { transform: translate(-3px,-50%); }
+  @media (max-width: 960px) { .orbit-node .letter { width: 34px; height: 34px; font-size: 17px; } .orbit-node .word { font-size: 9.5px; } }
+</style>
 </head>
 <body>
 
@@ -496,7 +599,7 @@
         <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 20,7 20,17 12,22 4,17 4,7"/></svg>
         Assessoria em sistemas de gestão · ISO 9001
       </span>
-      <h1>Seu sistema de gestão precisa funcionar no dia a dia, <em>não só na semana da auditoria</em>.</h1>
+      <h1>Melhoria contínua que funciona no dia a dia, <em>não só na semana da auditoria</em>.</h1>
       <p class="hero-sub">
         Assessoria sênior em SGQ ISO 9001, mapeamento de processos, auditorias internas, 5S e
         planejamento estratégico, pensada para PMEs que não querem o custo fixo de um profissional em tempo integral.
@@ -530,7 +633,6 @@
           <div class="orbit-node w"><span class="letter">A</span><span class="word">Agir</span></div>
           <img class="orbit-core" src="img/simbolo-x-transparente.png" alt="" loading="lazy">
         </div>
-        <p class="orbit-caption">O ciclo PDCA, base da ISO 9001, em movimento</p>
       </div>
     </div>
   </div>
@@ -551,7 +653,7 @@
       </div>
       <div class="problema">
         <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg>
-        <p>Cada pessoa faz o mesmo processo de um jeito, e o resultado muda conforme quem executa.</p>
+        <p>Cada operador faz de um jeito: não há padrão de trabalho nem de serviço, e o resultado muda conforme quem executa.</p>
       </div>
       <div class="problema">
         <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg>
@@ -559,11 +661,11 @@
       </div>
       <div class="problema">
         <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg>
-        <p>Ninguém sabe qual é a versão certa do procedimento, e existem três circulando.</p>
+        <p>O índice de retrabalho é alto, e o custo de refazer o que já deveria estar certo se perde no dia a dia.</p>
       </div>
       <div class="problema">
         <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg>
-        <p>As não conformidades se repetem porque o plano de ação nunca chega ao fim.</p>
+        <p>Não há acompanhamento das ações que precisam ser realizadas, e o que foi combinado se perde.</p>
       </div>
       <div class="problema">
         <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.01"/></svg>
@@ -589,7 +691,7 @@
     <div class="section-head">
       <div class="section-kicker">Serviços</div>
       <h2 class="section-title">Assessoria do diagnóstico à rotina que se sustenta sozinha</h2>
-      <p class="section-lede">Seis frentes de trabalho, isoladas ou combinadas num acompanhamento contínuo, com carga horária ajustada ao porte da empresa.</p>
+      <p class="section-lede">Seis frentes, isoladas ou combinadas num acompanhamento contínuo, com carga horária ajustada ao porte da empresa.</p>
     </div>
 
     <div class="servicos-grid">
@@ -601,13 +703,13 @@
         </div>
         <h3>Manutenção do SGQ baseado na ISO 9001</h3>
         <div class="servico-dor">Para quem já tem o sistema e precisa mantê-lo vivo o ano inteiro</div>
-        <p>Rotina mensal de manutenção do SGQ, para que a certificação seja consequência da operação, não uma maratona às vésperas da auditoria.</p>
-        <ul class="servico-entregas">
+        <p>Rotina mensal para a certificação ser consequência da operação, não uma maratona.</p>
+        <details class="servico-det"><summary>Ver entregas</summary><ul class="servico-entregas">
           <li>Atualização e controle de documentos e registros</li>
           <li>Análise crítica pela direção e tratamento de não conformidades</li>
           <li>Indicadores da qualidade e acompanhamento de metas</li>
           <li>Preparação da equipe para a auditoria de certificação</li>
-        </ul>
+        </ul></details>
       </article>
 
       <article class="servico-card">
@@ -617,13 +719,13 @@
         </div>
         <h3>Mapeamento e melhoria de processos</h3>
         <div class="servico-dor">Para quem sente o retrabalho, o gargalo e o "cada um faz de um jeito"</div>
-        <p>Mapeamento do processo como ele realmente acontece e redesenho do fluxo, para reduzir retrabalho e dependência de pessoas específicas.</p>
-        <ul class="servico-entregas">
+        <p>Processo mapeado como realmente acontece e fluxo redesenhado para reduzir retrabalho.</p>
+        <details class="servico-det"><summary>Ver entregas</summary><ul class="servico-entregas">
           <li>Levantamento do fluxo atual junto de quem executa</li>
           <li>Macrofluxo, SIPOC e fluxogramas por processo</li>
           <li>Definição de responsáveis, entradas, saídas e critérios</li>
           <li>Plano de melhoria priorizado por impacto</li>
-        </ul>
+        </ul></details>
       </article>
 
       <article class="servico-card">
@@ -633,13 +735,13 @@
         </div>
         <h3>Estruturação do sistema de gestão</h3>
         <div class="servico-dor">Para quem está começando do zero ou vai buscar a certificação</div>
-        <p>Estrutura do sistema de gestão desde o início: contexto, partes interessadas, riscos e a documentação essencial para sustentar tudo depois.</p>
-        <ul class="servico-entregas">
+        <p>Contexto, riscos e documentação essencial desde o início, só o que tem uso real.</p>
+        <details class="servico-det"><summary>Ver entregas</summary><ul class="servico-entregas">
           <li>Diagnóstico de aderência e plano de implantação por etapas</li>
           <li>Política, objetivos, contexto (SWOT) e partes interessadas</li>
           <li>Estrutura documental enxuta, só o que tem uso real</li>
           <li>Capacitação da equipe para operar o sistema sem depender de consultor</li>
-        </ul>
+        </ul></details>
       </article>
 
       <article class="servico-card">
@@ -649,13 +751,13 @@
         </div>
         <h3>Acompanhamento e auditorias internas</h3>
         <div class="servico-dor">Para quem precisa saber onde estão os riscos antes do auditor externo</div>
-        <p>Auditorias internas com olhar independente, priorizando os processos de maior risco e virando achados em ação com responsável e prazo.</p>
-        <ul class="servico-entregas">
+        <p>Auditorias independentes, priorizadas por risco, com achados virando ação com dono e prazo.</p>
+        <details class="servico-det"><summary>Ver entregas</summary><ul class="servico-entregas">
           <li>Programa anual de auditoria priorizado por risco</li>
           <li>Execução das auditorias e relatório com evidências</li>
           <li>Classificação de não conformidades e análise de causa</li>
           <li>Planos de ação e verificação de eficácia</li>
-        </ul>
+        </ul></details>
       </article>
 
       <article class="servico-card">
@@ -665,13 +767,13 @@
         </div>
         <h3>Implantação do 5S</h3>
         <div class="servico-dor">Para quem quer organização visível no chão de fábrica e no escritório</div>
-        <p>5S implantado com a equipe, não imposto a ela: organização, padrão visual e auditorias periódicas para o ganho não se perder em três meses.</p>
-        <ul class="servico-entregas">
+        <p>5S implantado com a equipe e auditado periodicamente para o ganho não se perder.</p>
+        <details class="servico-det"><summary>Ver entregas</summary><ul class="servico-entregas">
           <li>Treinamento de sensibilização e formação do comitê 5S</li>
           <li>Dia D, descarte e organização das áreas</li>
           <li>Padrão visual, identificação e regras de manutenção</li>
           <li>Checklist de auditoria 5S e ranking por área</li>
-        </ul>
+        </ul></details>
       </article>
 
       <article class="servico-card">
@@ -681,13 +783,13 @@
         </div>
         <h3>Planejamento estratégico: definição e monitoramento</h3>
         <div class="servico-dor">Para quem já planejou uma vez e viu o plano morrer na gaveta</div>
-        <p>Apoio à direção no plano estratégico e, principalmente, na rotina de acompanhamento: metas com dono e indicadores medidos de verdade.</p>
-        <ul class="servico-entregas">
+        <p>Plano estratégico e, principalmente, a rotina de acompanhamento: metas com dono e indicadores medidos.</p>
+        <details class="servico-det"><summary>Ver entregas</summary><ul class="servico-entregas">
           <li>Análise de cenário (SWOT) e definição de objetivos</li>
           <li>Mapa estratégico por perspectivas (BSC)</li>
           <li>Indicadores, metas e responsáveis por objetivo</li>
           <li>Rotina de monitoramento com atas e planos de ação</li>
-        </ul>
+        </ul></details>
       </article>
 
     </div>
@@ -748,11 +850,7 @@
         Software próprio da ORBEEX
       </span>
       <h2 class="section-title">Strategya: o sistema de gestão que sai da planilha</h2>
-      <p class="section-lede">
-        Planilha solta e documento em três versões são o motivo mais comum de um sistema de gestão desandar.
-        O <strong style="color:#fff">Strategya</strong> é o software que a ORBEEX criou para resolver isso,
-        a partir da rotina real de assessoria em PMEs.
-      </p>
+      <p class="section-lede">Planilha solta e documento em três versões são o motivo mais comum de um sistema de gestão desandar. O <strong style="color:#fff">Strategya</strong> é o software que a ORBEEX criou para resolver isso.</p>
     </div>
 
     <div class="strategya-modulos">
@@ -761,51 +859,47 @@
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg>
         </span>
         <h3>Planejamento estratégico</h3>
-        <p>SWOT, partes interessadas, missão e visão, macrofluxo, SIPOC, organograma, mapa estratégico e objetivos, tudo conectado.</p>
+        <p>SWOT, macrofluxo, SIPOC, mapa estratégico e objetivos, tudo conectado.</p>
       </div>
       <div class="modulo">
         <span class="modulo-ico" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h2l1.5 1.5L11 4"/><path d="M4 13h2l1.5 1.5L11 11"/><path d="M4 20h2l1.5 1.5L11 18"/><path d="M14 6.5h6M14 13.5h6M14 20.5h6"/></svg>
         </span>
         <h3>Gestão de ações</h3>
-        <p>Planos de ação e tarefas ligados a objetivos, indicadores, riscos e não conformidades. Quem faz o quê, até quando, e o que está atrasado.</p>
+        <p>Planos de ação ligados a objetivos, riscos e não conformidades: quem faz o quê e até quando.</p>
       </div>
       <div class="modulo">
         <span class="modulo-ico" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8l-5-5z"/><path d="M14 3v5h5"/><path d="M9 14l2 2 4-4"/></svg>
         </span>
         <h3>Documentos</h3>
-        <p>Numeração automática, ciclo de aprovação com assinatura eletrônica, controle de revisões e lista mestra. Acaba a dúvida de qual é a versão certa.</p>
+        <p>Numeração automática, aprovação eletrônica, controle de revisões e lista mestra.</p>
       </div>
       <div class="modulo">
         <span class="modulo-ico" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="17" rx="2"/><path d="M8.5 2.5v3M15.5 2.5v3"/><path d="M8.5 12l2 2 4.5-4.5"/></svg>
         </span>
         <h3>Auditorias internas</h3>
-        <p>Priorização por risco, planejamento com distribuição automática de horas e agenda, execução, resultados e plano de ação gerado a partir das não conformidades.</p>
+        <p>Priorização por risco, agenda automática e plano de ação gerado das não conformidades.</p>
       </div>
       <div class="modulo">
         <span class="modulo-ico" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 17.5L9 11l4 3.5 7.5-8.5"/><path d="M15.5 6h5v5"/></svg>
         </span>
         <h3>Indicadores e riscos</h3>
-        <p>Riscos e oportunidades avaliados, indicadores com meta e histórico, atas de reunião e dashboard para a análise crítica.</p>
+        <p>Riscos e oportunidades, indicadores com meta e histórico, atas e dashboard.</p>
       </div>
       <div class="modulo">
         <span class="modulo-ico" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/><path d="M12 14.5v2.5"/></svg>
         </span>
         <h3>Controle de acesso</h3>
-        <p>Permissões por módulo e por usuário, com níveis de visualização, edição e aprovação. Cada um vê e altera exatamente o que deve.</p>
+        <p>Permissões por módulo e usuário: visualização, edição e aprovação.</p>
       </div>
     </div>
 
     <div class="strategya-fecho">
-      <p>
-        <strong>Assessoria e software no mesmo lugar.</strong>
-        Nos contratos de manutenção, o Strategya é a ferramenta onde a rotina acontece, mas também pode ser
-        contratado separadamente por quem já tem equipe própria da qualidade.
-      </p>
+      <p><strong>Assessoria e software no mesmo lugar.</strong> Nos contratos de manutenção, é a ferramenta da rotina; também pode ser contratado separadamente.</p>
       <div class="strategya-actions">
         <a href="https://strategya.orbeex.com.br" class="btn btn-gold" target="_blank" rel="noopener" data-track="clique_strategya" data-track-item="acessar-software">
           Acessar o Strategya
@@ -825,13 +919,14 @@
       <h2 class="section-title">Consultoria sênior, sem intermediários</h2>
     </div>
     <div class="sobre-grid">
+      <figure class="sobre-foto">
+        <img src="img/luana-sobre.jpg" alt="Luana Civardi, fundadora da ORBEEX, sorrindo, vestindo camisa com o logo da ORBEEX" width="900" height="1125" loading="lazy">
+        <figcaption><strong>Luana Civardi</strong><span>Fundadora · ORBEEX</span></figcaption>
+      </figure>
       <div class="sobre-card">
-        <p>A ORBEEX nasceu de uma ideia simples: assim como uma colmeia organiza milhares de tarefas sem desperdício, uma empresa também pode funcionar com essa eficiência. O trabalho é descomplicar e fortalecer o sistema de gestão de PMEs, com inteligência técnica sênior e escopo flexível.</p>
+        <p>A ORBEEX nasceu de uma ideia simples: assim como uma colmeia organiza milhares de tarefas sem desperdício, uma empresa também pode funcionar com essa eficiência. O trabalho é descomplicar e fortalecer as empresas padronizando os processos, para aumentar a confiabilidade e a qualidade dos produtos e serviços oferecidos, com ou sem certificação.</p>
         <p class="sobre-aside">Não por acaso, tem uma colmeia escondida dentro do próprio nome: <strong>ORBEEX</strong>.</p>
         <p>Quem contrata a ORBEEX é atendido diretamente por quem executa, do diagnóstico à auditoria interna. Sem repasse para júnior, sem projeto de prateleira.</p>
-        <div class="sobre-signature">Luana Civardi
-          <small>Fundadora · ORBEEX Assessoria em Sistemas de Gestão</small>
-        </div>
         <div class="section-cta" style="text-align:left;margin-top:1.8rem">
           <a href="#contato" class="btn btn-navy">
             Falar com a Luana
@@ -839,7 +934,8 @@
           </a>
         </div>
       </div>
-      <div class="valores">
+    </div>
+    <div class="valores valores-row">
         <div class="valor-item">
           <div class="valor-hex hex" aria-hidden="true">
             <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l4-4 4 3 4-5 4 4"/><path d="M4 19h16"/></svg>
@@ -865,7 +961,6 @@
           <div><h3>Transferência de conhecimento</h3><p>Capacitação das equipes locais para garantir autonomia e cultura da qualidade dentro da empresa.</p></div>
         </div>
       </div>
-    </div>
   </div>
 </section>
 
@@ -882,7 +977,6 @@
     <div class="ox-prova-numeros">
       <div><b>7</b><span>Depoimentos</span></div>
       <div><b>5</b><span>Empresas</span></div>
-      <div><b>9,9</b><span>Nota média (de 10)</span></div>
     </div>
       <div class="ox-prova-grade">
         <figure class="ox-dep">
@@ -949,7 +1043,7 @@
           </div>
         </figure>
       </div>
-      <p class="ox-prova-nota">Depoimentos de clientes da assessoria da ORBEEX, coletados por formulário em setembro de 2026 e publicados com autorização expressa de cada pessoa. A nota média vem da pergunta &ldquo;de 0 a 10, o quanto você recomendaria a ORBEEX?&rdquo; do mesmo formulário. Reproduzidos como foram escritos, sem edição de conteúdo.</p>
+      <p class="ox-prova-nota">Depoimentos de clientes da assessoria da ORBEEX, coletados por formulário em setembro de 2026 e publicados com autorização expressa de cada pessoa. Reproduzidos como foram escritos, sem edição de conteúdo.</p>
     </div>
   </div>
 </section>
@@ -1127,6 +1221,13 @@
             <div>
               <div class="lbl">LinkedIn</div>
               <a class="val" href="https://www.linkedin.com/company/orbeex/" target="_blank" rel="noopener">ORBEEX no LinkedIn</a>
+            </div>
+          </div>
+          <div class="contato-item">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>
+            <div>
+              <div class="lbl">Instagram</div>
+              <a class="val" href="https://www.instagram.com/orbeex_/" target="_blank" rel="noopener">@orbeex_</a>
             </div>
           </div>
         </div>
